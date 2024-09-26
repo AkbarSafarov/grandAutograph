@@ -900,6 +900,7 @@
     -webkit-box-flex: 0;
         -ms-flex: 0 0 540px;
             flex: 0 0 540px;
+    max-width: 540px;
     padding-top: 108px;
 }
 .position_block .block-padding .inner .right {
@@ -973,6 +974,7 @@
         -webkit-box-flex: 0;
             -ms-flex: 0 0 400px;
                 flex: 0 0 400px;
+        max-width: 400px;
         padding-top: 38px;
     }
     .position_block .block-padding .title {
