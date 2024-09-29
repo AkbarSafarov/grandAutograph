@@ -1137,6 +1137,7 @@
 }
 .top_inner_bg .page_title h1 {
     color: #f9f9f9;
+    max-width: 900px;
 }
 @media all and (min-width: 1501px) {
     .top_inner_bg .page_title h1 {

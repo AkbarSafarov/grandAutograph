@@ -1232,6 +1232,7 @@
 
 	.page_title h1 {
 		color: #f9f9f9;
+		max-width: 900px;
 
 		@media all and (min-width: 1501px) {
 			font-size: 6.25rem;
