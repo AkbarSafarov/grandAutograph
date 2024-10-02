@@ -1884,6 +1884,7 @@
     color: #393335;
     padding-bottom: 40px;
     max-width: 584px;
+    font-family: var(--second-family);
 }
 .spes_slider_wrapper .title_slider_block .title .text {
     font-weight: 400;
@@ -4637,4 +4638,193 @@
 }
 .site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__phone-item a {
     color: #f4f6ea;
+}
+
+.right_slider .swiper-pagination-bullet {
+    position: relative;
+}
+.right_slider .swiper-pagination-bullet i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 10px;
+    background-color: #f9f9f9;
+}
+.right_slider .swiper-pagination-bullet b {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 0%;
+    height: 10px;
+    background-color: #c34e50;
+}
+.right_slider .swiper-pagination-bullet-active {
+    background-color: transparent;
+}
+.right_slider .swiper-pagination-bullet-active b {
+    -webkit-animation-name: countingBar;
+            animation-name: countingBar;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes countingBar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes countingBar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.fitnes_block_wr {
+    overflow: hidden;
+}
+
+.fitnes_top .left_slider .name,
+.fitnes_top .left_slider .pagination_fitnes,
+.fitnes_top .left_slider .title,
+.fitnes_top .left_slider .left_slider_fitnes,
+.fitnes_top .left_slider .left_slider_bottom {
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 0;
+}
+.fitnes_top .left_slider.showed .name,
+.fitnes_top .left_slider.showed .pagination_fitnes,
+.fitnes_top .left_slider.showed .title,
+.fitnes_top .left_slider.showed .left_slider_fitnes,
+.fitnes_top .left_slider.showed .left_slider_bottom {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+}
+.fitnes_top .right_slider.showed .right_slider_fitnes {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+}
+.fitnes_top .right_slider .right_slider_fitnes {
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 0;
+}
+
+.chef_block_wr .block-padding .left .title,
+.chef_block_wr .block-padding .left .name,
+.chef_block_wr .block-padding .left .button {
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 0;
+}
+.chef_block_wr .block-padding .left.showed .title,
+.chef_block_wr .block-padding .left.showed .name,
+.chef_block_wr .block-padding .left.showed .button {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+}
+
+.gal_res_block .block-padding .item .image {
+    position: relative;
+    padding-top: 62%;
+    overflow: hidden;
+}
+.gal_res_block .block-padding .item .image img {
+    height: 120%;
+    width: 100%;
+    max-width: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.menu_food_block .title,
+.menu_food_block .text,
+.menu_food_block .inner .item {
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 0;
+}
+.menu_food_block.showed .title,
+.menu_food_block.showed .text,
+.menu_food_block.showed .inner .item {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+}
+
+.rest_slider_wr .rest_slider_top .left_slider .title,
+.rest_slider_wr .rest_slider_top .left_slider .left_slider_rest_slider,
+.rest_slider_wr .rest_slider_top .left_slider_bottom,
+.rest_slider_wr .rest_slider_top .right_slider {
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 0;
+}
+.rest_slider_wr.showed .rest_slider_top .left_slider .title,
+.rest_slider_wr.showed .rest_slider_top .left_slider .left_slider_rest_slider,
+.rest_slider_wr.showed .rest_slider_top .left_slider_bottom,
+.rest_slider_wr.showed .rest_slider_top .right_slider {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+}
+
+.form_bottom_rest .form_inner {
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    opacity: 0;
+}
+.form_bottom_rest.showed .form_inner {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
 }

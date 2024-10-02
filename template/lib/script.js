@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function () {
         blockAnimations: function () {
             gsap.registerPlugin(ScrollTrigger/*, SplitText*/);
 
-            const imageItems = document.querySelectorAll('.image-item-wr, .restaurants-block__bottom-slider, .interiors-block__left-slider, .interiors-block__right-slider, .announces-block__slider');
+            const imageItems = document.querySelectorAll('.image-item-wr, .restaurants-block__bottom-slider, .interiors-block__left-slider, .interiors-block__right-slider, .announces-block__slider, .fitnes_block_wr .left_slider,.fitnes_block_wr .right_slider,.chef_block_wr .block-padding .left,.menu_food_block,.rest_slider_wr,.form_bottom_rest');
 
             const observerOptions = {
                 root: null, // viewport
@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
 
-            const blocks = document.querySelectorAll(".congress-block__text p, .map-block__text, .restaurants-block__bottom-slider, .restaurants-block__bottom-right .text p, .restaurants-block__bottom-right .title, .restaurants-block__middle-body > div, .restaurants-block__middle-image, .restaurants-block__body .image-item-wr, .restaurants-block__top-right > .title, .announces-block__slider-item .item-header, .announces-block__slider-item .item-title, .announces-block__slider-item .item-date, .announces-block__slider-item .item-body, .citys-pearl__text, .interiors-block__left-text, .interiors-block__left-bigText, .interiors-block__right-text");
+            const blocks = document.querySelectorAll(".congress-block__text p, .map-block__text, .restaurants-block__bottom-slider, .restaurants-block__bottom-right .text p, .restaurants-block__bottom-right .title, .restaurants-block__middle-body > div, .restaurants-block__middle-image, .restaurants-block__body .image-item-wr, .restaurants-block__top-right > .title, .announces-block__slider-item .item-header, .announces-block__slider-item .item-title, .announces-block__slider-item .item-date, .announces-block__slider-item .item-body, .citys-pearl__text, .interiors-block__left-text, .interiors-block__left-bigText, .interiors-block__right-text, .chef_block_wr .block-padding .right");
             blocks.forEach((block) => {
                 gsap.set(block, { opacity: 0, y: 100 });
 
@@ -629,6 +629,26 @@ document.addEventListener('DOMContentLoaded', function () {
                         scrollTrigger: {
                             //scroller: "[data-scroll-container]",
                             trigger: image.closest('.image-item-wr'),
+                            start: 'top 40%',
+                            end: 'bottom top',
+                            scrub: true,
+                            stagger: 0.5,
+                            duration: 1
+                        }
+                    }
+                );
+            });
+
+            let restautants_images_new = document.querySelectorAll('.gal_res_block .block-padding .item .image img');
+
+            restautants_images_new.forEach(image => {
+                gsap.fromTo(image,
+                    { y: '-10%' },
+                    {
+                        y: '10%',
+                        scrollTrigger: {
+                            //scroller: "[data-scroll-container]",
+                            trigger: image.closest('.gal_res_block'),
                             start: 'top 40%',
                             end: 'bottom top',
                             scrub: true,
@@ -1491,23 +1511,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 initialSlide: currentMonth
             });
         },
-        fitnesSlider: function(){
+        fitnesSlider: function() {
             const fitnesWrapper = document.querySelector('.fitnes_block_wr');
+            if (!fitnesWrapper) return;
 
-            if(!fitnesWrapper) return; 
+            var listArray = ["slide1", "slide2", "slide3"]; // Массив может использоваться для другого функционала
 
+            // Инициализация основного слайдера с изображениями
             const sliderImage = new Swiper('.right_slider_fitnes', {
                 slidesPerView: 1,
                 loop: true,
                 effect: 'slide',
                 speed: 1000,
                 spaceBetween: 0,
+                autoplay: {
+                    delay: 3000,
+                },
+                fadeEffect: {
+                    crossFade: true
+                },
                 pagination: {
                     el: '.fitnes_pagination_block',
                     clickable: true,
+                    type: 'bullets',
+                    renderBullet: function (index, className) {
+                        // Возвращаем кастомный элемент пагинации
+                        return '<span class="' + className + '">' + '<i></i>' + '<b></b>'  + '</span>';
+                    },
                 },
             });
 
+            // Инициализация слайдера с текстом (thumbs-слайдер)
             const sliderText = new Swiper('.left_slider_fitnes', {
                 slidesPerView: 1,
                 loop: true,
@@ -1518,14 +1552,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextEl: '.fitnes_arrow_btn.swiper-button-next',
                     prevEl: '.fitnes_arrow_btn.swiper-button-prev',
                 },
-                thumbs: {
-                    swiper: sliderImage,
-                },
                 pagination: {
                     el: ".pagination_fitnes",
                     type: "fraction",
-                },    
+                },
             });
+
+            // Устанавливаем `sliderText` как thumbs для `sliderImage`, чтобы текстовый слайдер был "миниатюрами"
+            sliderImage.thumbs.swiper = sliderText;
         },
         notXSlider: function(){
             const notWrapper = document.querySelector('.block_not_x');
