@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function () {
         blockAnimations: function () {
             gsap.registerPlugin(ScrollTrigger/*, SplitText*/);
 
-            const imageItems = document.querySelectorAll('.image-item-wr, .restaurants-block__bottom-slider, .interiors-block__left-slider, .interiors-block__right-slider, .announces-block__slider, .fitnes_block_wr .left_slider,.fitnes_block_wr .right_slider,.chef_block_wr .block-padding .left,.menu_food_block,.rest_slider_wr,.form_bottom_rest');
+            const imageItems = document.querySelectorAll('.image-item-wr, .restaurants-block__bottom-slider, .interiors-block__left-slider, .interiors-block__right-slider, .announces-block__slider, .fitnes_block_wr .left_slider,.fitnes_block_wr .right_slider,.chef_block_wr .block-padding .left,.menu_food_block,.rest_slider_wr,.form_bottom_rest, .announces_list_wrap .announces-block__slider-item');
 
             const observerOptions = {
                 root: null, // viewport

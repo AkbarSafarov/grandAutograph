@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="template/lib/lightgallery/lightgallery.min.css" />
+<link rel="stylesheet" href="template/lib/swiper/swiper.min.css"/>
+<link rel="stylesheet" href="template/lib/locoscroll/locomotive-scroll.min.css">
+<link rel="stylesheet" href="template/styles.css">
+<link rel="stylesheet" href="template/styles-inner.css">
+<link rel="stylesheet" href="template/styles-inner-add.css">
+<script src="template/lib/locoscroll/locomotive-scroll.min.js"></script>
+<script src="template/lib/gsap/gsap-latest-beta.min.js?r=5426"></script>
+<script src="template/lib/gsap/ScrollTrigger.min.js"></script>
+<script src="template/lib/lightgallery/lightgallery.js"></script>
+<script src="template/lib/lightgallery/lg-fullscreen.js"></script>
+<script src="template/lib/swiper/swiper.min.js"></script>
+<script src="template/lib/imask/imask.js"></script>
+<script src="template/lib/lenis/lenis.min.js"></script>
+<script src="template/lib/script.js"></script>
+</head>
+<body>
+<div class="site-wrapper inner_page_main inner_page_bg">
+<header class="site-header block-padding" data-scroll-section>
+<div class="site-header__inner block-width">
+<div class="site-header__left">
+<div class="site-header__burger-btn">
+<span  class="button button-white-op">
+<svg class="burger-default" width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="21" height="2" fill="white"/>
+<rect y="12" width="21" height="2" fill="white"/>
+</svg>
+<svg class="burger-active" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.00752083 1.39092L1.39099 0.00744673L17.9926 16.6091L16.6092 17.9926L0.00752083 1.39092Z" fill="white" />
+<path d="M16.6092 0.00744673L17.9926 1.39092L1.39099 17.9926L0.00752022 16.6091L16.6092 0.00744673Z" fill="white" />
+</svg>
+</span>
+</div>
+<div class="site-header__choose-btn">
+<span class="button button-white-op"><span>Выбрать номер</span></span>
+</div>
+<div class="site-header__3d-btn">
+<span  class="button button-white-op">
+<svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.32047 14.24C5.34714 14.24 4.38047 14.1133 3.42047 13.86C2.46047 13.5933 1.64714 13.22 0.980469 12.74L2.24047 10.26C2.7738 10.6467 3.3938 10.9533 4.10047 11.18C4.80714 11.4067 5.52047 11.52 6.24047 11.52C7.0538 11.52 7.6938 11.36 8.16047 11.04C8.62714 10.72 8.86047 10.28 8.86047 9.72C8.86047 9.18667 8.6538 8.76667 8.24047 8.46C7.82714 8.15333 7.16047 8 6.24047 8H4.76047V5.86L8.66047 1.44L9.02047 2.6H1.68047V0H11.4805V2.1L7.60047 6.52L5.96047 5.58H6.90047C8.62047 5.58 9.92047 5.96667 10.8005 6.74C11.6805 7.51333 12.1205 8.50667 12.1205 9.72C12.1205 10.5067 11.9138 11.2467 11.5005 11.94C11.0871 12.62 10.4538 13.1733 9.60047 13.6C8.74714 14.0267 7.6538 14.24 6.32047 14.24Z" fill="white"/>
+<path d="M14.4964 14V0H20.8564C22.3764 0 23.7164 0.293334 24.8764 0.880001C26.0364 1.45333 26.9431 2.26 27.5964 3.3C28.2497 4.34 28.5764 5.57333 28.5764 7C28.5764 8.41333 28.2497 9.64667 27.5964 10.7C26.9431 11.74 26.0364 12.5533 24.8764 13.14C23.7164 13.7133 22.3764 14 20.8564 14H14.4964ZM17.7364 11.34H20.6964C21.6297 11.34 22.4364 11.1667 23.1164 10.82C23.8097 10.46 24.3431 9.95333 24.7164 9.3C25.1031 8.64667 25.2964 7.88 25.2964 7C25.2964 6.10667 25.1031 5.34 24.7164 4.7C24.3431 4.04667 23.8097 3.54667 23.1164 3.2C22.4364 2.84 21.6297 2.66 20.6964 2.66H17.7364V11.34Z" fill="white"/>
+</svg>
+</span>
+</div>
+</div>
+<div class="site-header__logo">
+<a href="/">
+<img src="include/images/logo.svg" alt="">
+</a>
+</div>
+<div class="site-header__right">
+<div class="site-header__phones">
+<div class="site-header__phone-item">
+<a href="tel:83832300300">8 383 230-03-00</a>
+</div>
+</div>
+<div class="site-header__langs">
+<div class="site-header__langs-btn"><span>En</span></div>
+<div class="site-header__langs-list">
+<div class="site-header__langs-item">
+<a href="#">Ru</a>
+</div>
+<div class="site-header__langs-item">
+<a href="#">Ch</a>
+</div>
+</div>
+</div>
+<div class="site-header__map-btn">
+<a href="#">
+<svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 12.3077C24 23.3846 12 32 12 32C12 32 0 23.3846 0 12.3077C0 9.04349 1.26428 5.91298 3.51472 3.60484C5.76516 1.2967 8.8174 0 12 0C15.1826 0 18.2348 1.2967 20.4853 3.60484C22.7357 5.91298 24 9.04349 24 12.3077Z" fill="#9C163A"/>
+<path class="circle" d="M12 18C14.7614 18 17 15.7614 17 13C17 10.2386 14.7614 8 12 8C9.23858 8 7 10.2386 7 13C7 15.7614 9.23858 18 12 18Z" fill="white"/>
+</svg>
+</a>
+</div>
+<div class="site-header__taxi-btn">
+<span>
+<svg width="31" height="13" viewBox="0 0 31 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 0H13V7H6V0Z" fill="white"/>
+<path d="M0 6H7V13H0V6Z" fill="white"/>
+<path d="M18 0H25V7H18V0Z" fill="white"/>
+<path d="M12 6H19V13H12V6Z" fill="white"/>
+<path d="M24 6H31V13H24V6Z" fill="white"/>
+</svg>
+</span>
+</div>
+</div>
+</div>
+</header>
+<div class="site-content" data-scroll-container><div class="top_inner_bg" style="background-image: url(include/images/spes_bg.jpg);">
+<div class="path_block_wr animation_block">
+<div class="block-padding">
+<a href="">Главная</a><span>/</span>Специальные предложения
+</div>
+</div>
+<div class="page_title animation_block">
+<div class="block-padding">
+<h1>Специальные предложения</h1>
+<div class="text">Grand Autograph - единственный пятизвездочный отель в Новосибирске</div>
+<div class="play_btn_top"></div>
+</div>
+</div>
+</div>
+<div class="content_main_block spec_page">
+<div class="announces_list_wrap">
+<div class="block-padding">
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">День рождения</div>
+<div class="item-body">
+<img src="include/images/spes_l1.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">В джазе только девушки</div>
+<div class="item-body">
+<img src="include/images/spes_l2.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">Безупречный люкс</div>
+<div class="item-body">
+<img src="include/images/spes_l3.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">Вечер в театре, ночь в отеле</div>
+<div class="item-body">
+<img src="include/images/spes_l4.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">Длительное проживание от трёх дней</div>
+<div class="item-body">
+<img src="include/images/spes_l5.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">Семейный пакет</div>
+<div class="item-body">
+<img src="include/images/spes_l6.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">СПА</div>
+<div class="item-body">
+<img src="include/images/spes_l7.jpg" alt="announce_sl2">
+</div>
+</div> 
+<div class="announces-block__slider-item">
+<div class="item-header">
+<div class="item-btn">
+<a href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M11.0216 0.260986H12.9781V23.7392H11.0216V0.260986Z" fill="white" />
+<path d="M23.739 11.0219V12.9784L0.260742 12.9784L0.260742 11.0219L23.739 11.0219Z" fill="white" /></svg>
+</a>
+</div>
+</div>
+<div class="item-title">Пакет выходного дня</div>
+<div class="item-body">
+<img src="include/images/spes_l8.jpg" alt="announce_sl2">
+</div>
+</div> 
+</div>
+</div>
+<div class="review_slider_wrapper animation_block">
+<div class="block-padding">
+<div class="title_slider_block">
+<div class="title">Отзывы о предложениях</div>
+<div class="arrow__nav">
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+</div>
+<div class="swiper swiper_review_slider">
+<div class="swiper-wrapper">    
+<div class="review swiper-slide">
+<div class="review_top">
+<div class="date">19 января 2024</div>
+<div class="name">Александра Петрова</div>
+<div class="stars"><div class="stars_inner" style="width: 80%;"></div></div>
+<div class="icon">
+<img src="include/images/review1.svg" alt="">
+</div>
+</div>
+<div class="body">
+<p>Потрясающий сервис! На Алтае редко встретишь такое внимание к гостям! Ресторан еще не работает,но всю еду по меню привозят куда попросишь,будь то номер,беседка у реки,либо у домика.</p>
+<p>По запросу привозят дрова и разжигают костер в беседках. Все очень дружелюбные. Мы очень довольн.....</p>
+</div>
+<div class="bottom"><a href="" class="link">Читать весь отзыв</a></div>
+</div>
+<div class="review swiper-slide">
+<div class="review_top">
+<div class="date">19 января 2024</div>
+<div class="name">Александра Петрова</div>
+<div class="stars"><div class="stars_inner" style="width: 80%;"></div></div>
+<div class="icon">
+<img src="include/images/review1.svg" alt="">
+</div>
+</div>
+<div class="body">
+<p>Потрясающий сервис! На Алтае редко встретишь такое внимание к гостям! Ресторан еще не работает,но всю еду по меню привозят куда попросишь,будь то номер,беседка у реки,либо у домика.</p>
+<p>По запросу привозят дрова и разжигают костер в беседках. Все очень дружелюбные. Мы очень довольн.....</p>
+</div>
+<div class="bottom"><a href="" class="link">Читать весь отзыв</a></div>
+</div>
+<div class="review swiper-slide">
+<div class="review_top">
+<div class="date">19 января 2024</div>
+<div class="name">Александра Петрова</div>
+<div class="stars"><div class="stars_inner" style="width: 80%;"></div></div>
+<div class="icon">
+<img src="include/images/review1.svg" alt="">
+</div>
+</div>
+<div class="body">
+<p>Потрясающий сервис! На Алтае редко встретишь такое внимание к гостям! Ресторан еще не работает,но всю еду по меню привозят куда попросишь,будь то номер,беседка у реки,либо у домика.</p>
+<p>По запросу привозят дрова и разжигают костер в беседках. Все очень дружелюбные. Мы очень довольн.....</p>
+</div>
+<div class="bottom"><a href="" class="link">Читать весь отзыв</a></div>
+</div>
+<div class="review swiper-slide">
+<div class="review_top">
+<div class="date">19 января 2024</div>
+<div class="name">Александра Петрова</div>
+<div class="stars"><div class="stars_inner" style="width: 80%;"></div></div>
+<div class="icon">
+<img src="include/images/review1.svg" alt="">
+</div>
+</div>
+<div class="body">
+<p>Потрясающий сервис! На Алтае редко встретишь такое внимание к гостям! Ресторан еще не работает,но всю еду по меню привозят куда попросишь,будь то номер,беседка у реки,либо у домика.</p>
+<p>По запросу привозят дрова и разжигают костер в беседках. Все очень дружелюбные. Мы очень довольн.....</p>
+</div>
+<div class="bottom"><a href="" class="link">Читать весь отзыв</a></div>
+</div>
+</div>
+</div>
+</div>  
+</div> 
+</div><footer class="site-footer" data-scroll-section>
+<div class="block-padding">
+<div class="site-footer__inner block-width">
+<div class="site-footer__logo">
+<a href="/">
+<img src="include/images/footer_logo.svg" alt="footer_logo">
+</a>
+</div>
+<div class="site-footer__menu">
+<nav>
+<ul>
+<li class="hasChild">
+<a href="#">
+<span>Номера</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Для двоих</a></li>
+<li><a href="#">Люкс</a></li>
+<li><a href="#">Одноместный</a></li>
+<li><a href="#">С террасой</a></li>
+<li><a href="#">Страницы номеров</a></li>
+</ul>
+</li>
+<li class="hasChild">
+<a href="#">
+<span>Услуги</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Фитнес-центр</a></li>
+<li><a href="#">СПА</a></li>
+<li><a href="#">Бассейн</a></li>
+<li><a href="#">Трансфер</a></li>
+<li><a href="#">Паркинг</a></li>
+<li><a href="#">Корпоративным клиентам</a></li>
+<li><a href="#">Ателье</a></li>
+</ul>
+</li>
+<li class="hasChild">
+<a href="#">
+<span>Ресторан и бар</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Кафе-бар «Увертюра»</a></li>
+<li><a href="#">Ресторан 10Тен</a></li>
+<li><a href="#">Capsula</a></li>
+<li><a href="#">Кейтеринг</a></li>
+<li><a href="#">Room Service</a></li>
+<li><a href="#">Vip Terrace</a></li>
+</ul>
+</li>
+<li class="hasChild">
+<a href="#">
+<span>Конгресс-холл</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Чайковский</a></li>
+<li><a href="#">Рахманинов</a></li>
+<li><a href="#">Шостакович</a></li>
+<li><a href="#">Стравинский</a></li>
+<li><a href="#">Глинка</a></li>
+<li><a href="#">Фойе</a></li>
+</ul>
+</li>
+<li class="hasChild">
+<a href="#">
+<span>Мероприятия</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Свадьба</a></li>
+<li><a href="#">Девичник</a></li>
+<li><a href="#">Корпоратив</a></li>
+<li><a href="#">Организация мероприятий</a></li>
+</ul>
+</li>
+<li class="hasChild">
+<a href="#">
+<span>Предложения</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Выходные в отеле</a></li>
+<li><a href="#">Семейные выходные</a></li>
+<li><a href="#">Отель + театр</a></li>
+<li><a href="#">Свадебные выходные</a></li>
+<li><a href="#">Романтические выходные для двоих</a></li>
+<li><a href="#">СПА для двоих</a></li>
+<li><a href="#">Свидание в Capsula</a></li>
+<li><a href="#">Страницы предложений</a></li>
+</ul>
+</li>
+<li class="hasChild">
+<a href="#">
+<span>Отель</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#">Галерея</a></li>
+<li><a href="#">Расположение</a></li>
+<li><a href="#">Карьера</a></li>
+<li><a href="#">Правила проживания</a></li>
+<li><a href="#">Пресс-центр</a></li>
+<li><a href="#">Сертификаты и лицензии</a></li>
+<li><a href="#">Контроль качества сервиса</a></li>
+<li><a href="#">Программа лояльности</a></li>
+<li><a href="#">Куда сходить в Новосибирске</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Афиша</a>
+</li>
+<li>
+<a href="#">Контакты</a>
+</li>
+<li class="last-item">
+<div class="site-footer__contacts">
+<div class="site-footer__phones">
+<div class="site-footer__phones-title">Телефон</div>
+<div class="site-footer__phones-body">
+<div class="site-footer__phones-item">
+<a href="tel:+73832300300">+7 (383) 230-03-00</a>
+</div>
+</div>
+</div>
+<div class="site-footer__mails">
+<div class="site-footer__mails-title">Эл.почта</div>
+<div class="site-footer__mails-body">
+<div class="site-footer__mails-item">
+<a href="mailto:pochta@mail.ru">pochta@mail.ru</a>
+</div>
+</div>
+</div>
+<div class="site-footer__address">
+<div class="site-footer__address-title">Адрес:</div>
+<div class="site-footer__address-body">Новосибирск, ул. Орджоникидзе, д. 31</div>
+</div>
+</div>
+<div class="site-footer__socials">
+<div class="site-footer__socials-list">
+<div class="site-footer__socials-item">
+<a href="#">
+<img src="include/images/tg_icon.svg" alt="tg_icon">
+</a>
+</div>
+<div class="site-footer__socials-item">
+<a href="#">
+<img src="include/images/vk_icon.svg" alt="vk_icon">
+</a>
+</div>
+<div class="site-footer__socials-item">
+<a href="#">
+<img src="include/images/ok_icon.svg" alt="ok_icon">
+</a>
+</div>
+</div>
+</div>
+<div class="site-footer__presentation">
+<a href="#">
+<div class="icon"></div>
+<span>Скачать презентацию</span>
+</a>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="site-footer__bottom-wr block-padding">
+<div class="site-footer__bottom block-width">
+<div class="site-footer__bottom-design">Разработка сайта  —  Once&Twice</div>
+<div class="site-footer__bottom-center">
+<div class="site-footer__bottom-widget">
+<img src="include/images/widget_image.png" alt="widget_image">
+</div>
+<div class="site-footer__bottom-group">Группа компаний <b>TS Group</b></div>
+</div>
+<div class="site-footer__bottom-copy">© 2024 Grand Autograph, Все права защищены</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="burger-block lenis ">
+<div class="burger-block__inner block-padding">
+<div class="block-width">
+<div class="burger-block__top">
+<div class="burger-block__menu">
+<nav>
+<ul>
+<li class="hasChild">
+<a href="#" class="active" data-img="include/images/burger_image.png">
+<span>Отель</span>
+<span class="arrow"></span>
+</a>
+<ul>
+<li><a href="#" data-img="include/images/main-video-poster.png">Свадьба</a></li>
+<li><a href="#" data-img="include/images/burger_image.png">Девичник</a></li>
+<li><a href="#" data-img="include/images/main-video-poster.png">Корпоратив</a></li>
+<li><a href="#" data-img="include/images/burger_image.png">Организация мероприятий</a></li>
+</ul>
+</li>
+<li><a href="#" data-img="include/images/main-video-poster.png">Номера</a></li>
+<li><a href="#" data-img="include/images/burger_image.png">Конгресс-холл</a></li>
+<li><a href="#" data-img="include/images/inter_left_sl1.png">Ресторан и бар</a></li>
+<li><a href="#" data-img="include/images/congress_img1.png">Услуги</a></li>
+<li><a href="#" data-img="include/images/congress_img2.png">Предложения</a></li>
+<li><a href="#" data-img="include/images/congress_img3.png">Афиша</a></li>
+<li><a href="#" data-img="include/images/burger_image.png">Контакты</a></li>
+</ul>
+</nav>
+</div>
+<div class="burger-block__image">
+<img src="include/images/burger_image.png" alt="burger_image">
+</div>
+</div>
+<div class="burger-block__bottom">
+<div class="burger-block__contacts">
+<div class="burger-block__phones">
+<div class="burger-block__phones-title">Телефон</div>
+<div class="burger-block__phones-body">
+<div class="burger-block__phones-item">
+<a href="tel:+73832300300">+7 (383) 230-03-00</a>
+</div>
+</div>
+</div>
+<div class="burger-block__mails">
+<div class="burger-block__mails-title">Эл.почта</div>
+<div class="burger-block__mails-body">
+<div class="burger-block__mails-item">
+<a href="mailto:pochta@mail.ru">pochta@mail.ru</a>
+</div>
+</div>
+</div>
+<div class="burger-block__address">
+<div class="burger-block__address-title">Адрес:</div>
+<div class="burger-block__address-body">Новосибирск, ул. Орджоникидзе, д. 31</div>
+</div>
+</div>
+<div class="burger-block__presentation">
+<a href="#">
+<div class="icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none"><path d="M18 4.375C18 4.09886 17.7761 3.875 17.5 3.875C17.2238 3.875 17 4.09886 17 4.375L18 4.375ZM17 22.4167C17 22.6928 17.2238 22.9167 17.5 22.9167C17.7761 22.9167 18 22.6928 18 22.4167H17ZM23.6868 17.8536C23.8821 17.6583 23.8821 17.3417 23.6868 17.1464C23.4916 16.9512 23.175 16.9512 22.9797 17.1464L23.6868 17.8536ZM18.5312 22.3021L18.1776 21.9486L18.5312 22.3021ZM16.4688 22.3021L16.8223 21.9486L16.4688 22.3021ZM12.0202 17.1464C11.8249 16.9512 11.5083 16.9512 11.3131 17.1464C11.1178 17.3417 11.1178 17.6583 11.3131 17.8536L12.0202 17.1464ZM8.37012 30.125C8.09397 30.125 7.87012 30.3489 7.87012 30.625C7.87012 30.9011 8.09397 31.125 8.37012 31.125V30.125ZM27.3919 31.125C27.668 31.125 27.8919 30.9011 27.8919 30.625C27.8919 30.3489 27.668 30.125 27.3919 30.125V31.125ZM17 4.375L17 22.4167H18L18 4.375L17 4.375ZM22.9797 17.1464L18.1776 21.9486L18.8847 22.6557L23.6868 17.8536L22.9797 17.1464ZM16.8223 21.9486L12.0202 17.1464L11.3131 17.8536L16.1152 22.6557L16.8223 21.9486ZM18.1776 21.9486C17.8033 22.3228 17.1966 22.3228 16.8223 21.9486L16.1152 22.6557C16.88 23.4205 18.1199 23.4205 18.8847 22.6557L18.1776 21.9486ZM8.37012 31.125H27.3919V30.125H8.37012V31.125Z" fill="white"/></svg>
+</div>
+<span>Скачать презентацию</span>
+</a>
+</div>
+<div class="burger-block__socials">
+<div class="burger-block__socials-list">
+<div class="burger-block__socials-item">
+<a href="#">
+<img src="include/images/tg_icon.svg" alt="tg_icon">
+</a>
+</div>
+<div class="burger-block__socials-item">
+<a href="#">
+<img src="include/images/vk_icon.svg" alt="vk_icon">
+</a>
+</div>
+<div class="burger-block__socials-item">
+<a href="#">
+<img src="include/images/ok_icon.svg" alt="ok_icon">
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="popup-form lenis">
+<div class="popup-form__inner">
+<div class="popup-form__closer">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.00752083 1.39104L1.39099 0.0075688L17.9926 16.6092L16.6092 17.9927L0.00752083 1.39104Z" fill="white"/>
+<path d="M16.6092 0.0075688L17.9926 1.39104L1.39099 17.9927L0.00752022 16.6092L16.6092 0.0075688Z" fill="white"/>
+</svg>
+</div>
+<div class="popup-form__top">
+<div class="popup-form__title">Введите номер телефона и адрес, и мы Вас заберем!</div>
+<div class="popup-form__form">
+<form action="">
+<div class="popup-form__form-field">
+<input type="text" class="phone_field" placeholder="+7 (___) ___-__-__">
+</div>
+<div class="popup-form__form-field">
+<input type="text" placeholder="Введите адрес">
+</div>
+<div class="popup-form__form-field button-field">
+<button class="button button-white"><span>Отправить</span></button>
+</div>
+<div class="popup-form__form-field">Нажимая кнопку, вы даёте согласие на обработку ваших персональных данных</div>
+</form>
+</div>
+</div>
+<div class="popup-form__image">
+<img src="include/images/car_image.png" alt="car_image">
+</div>
+</div>
+</div>
+<div class="fixed-btns">
+<div class="fixed-btns__popup-btn">
+<span class="fixed-btns__popup-btn-s">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.80252 20.8565L6.41271 21.7774H6.41271L6.80252 20.8565ZM6.80252 11.6435L7.19232 12.5644L6.80252 11.6435ZM7.73723 11.4783L7.54745 12.4601L7.73723 11.4783ZM8.53773 12.0087L9.36791 11.4512H9.36791L8.53773 12.0087ZM7.73723 21.0217L7.54745 20.0399H7.54745L7.73723 21.0217ZM8.53773 20.4913L7.70755 19.9338L7.70754 19.9338L8.53773 20.4913ZM23.1975 20.8565L23.5873 21.7774L23.1975 20.8565ZM23.1975 11.6435L22.8077 12.5644L23.1975 11.6435ZM22.2628 11.4783L22.4526 12.4601L22.2628 11.4783ZM21.4623 12.0087L20.6321 11.4512L21.4623 12.0087ZM22.2628 21.0217L22.4526 20.0399H22.4526L22.2628 21.0217ZM21.4623 20.4913L22.2925 19.9338V19.9338L21.4623 20.4913ZM24.75 21.25C24.75 20.6977 24.3023 20.25 23.75 20.25C23.1977 20.25 22.75 20.6977 22.75 21.25H24.75ZM15 24C14.4477 24 14 24.4477 14 25C14 25.5523 14.4477 26 15 26V24ZM7.19232 19.9356C5.75521 19.3273 4.75 17.9049 4.75 16.25H2.75C2.75 18.7363 4.26202 20.8671 6.41271 21.7774L7.19232 19.9356ZM4.75 16.25C4.75 14.5951 5.75521 13.1727 7.19232 12.5644L6.41271 10.7226C4.26202 11.6329 2.75 13.7637 2.75 16.25H4.75ZM9.75 19.25V13.25H7.75V19.25H9.75ZM7.19232 12.5644C7.29084 12.5227 7.35256 12.4967 7.40558 12.4768C7.45495 12.4582 7.47605 12.453 7.4827 12.4515C7.48544 12.4509 7.48551 12.451 7.48388 12.4512C7.4822 12.4514 7.48144 12.4514 7.48249 12.4514C7.48434 12.4514 7.50282 12.4515 7.54745 12.4601L7.92702 10.4965C7.62818 10.4387 7.3494 10.4337 7.05711 10.4973C6.80718 10.5518 6.57464 10.654 6.41271 10.7226L7.19232 12.5644ZM9.75 13.25C9.75 12.7142 9.78193 12.0678 9.36791 11.4512L7.70755 12.5662C7.71516 12.5776 7.72329 12.5835 7.73272 12.6523C7.74792 12.7633 7.75 12.9167 7.75 13.25H9.75ZM7.54745 12.4601C7.53572 12.4579 7.52723 12.4557 7.52219 12.4543C7.51709 12.4529 7.51438 12.452 7.51413 12.4519C7.51402 12.4519 7.51998 12.454 7.53174 12.4594C7.55623 12.4707 7.59004 12.4892 7.62713 12.5137C7.66422 12.5383 7.69439 12.5622 7.71436 12.5804C7.72394 12.5891 7.72818 12.5938 7.72811 12.5937C7.72793 12.5935 7.72602 12.5914 7.72274 12.5872C7.7195 12.5831 7.7142 12.5761 7.70755 12.5662L9.36791 11.4512C9.19085 11.1876 8.93501 10.9811 8.73184 10.8465C8.52867 10.7119 8.23884 10.5568 7.92702 10.4965L7.54745 12.4601ZM6.41271 21.7774C6.57464 21.846 6.80718 21.9482 7.05711 22.0027C7.3494 22.0663 7.62818 22.0613 7.92702 22.0035L7.54745 20.0399C7.50282 20.0485 7.48434 20.0486 7.48249 20.0486C7.48144 20.0486 7.4822 20.0486 7.48388 20.0488C7.48551 20.049 7.48544 20.0491 7.4827 20.0485C7.47605 20.047 7.45495 20.0418 7.40557 20.0232C7.35256 20.0033 7.29084 19.9773 7.19232 19.9356L6.41271 21.7774ZM7.75 19.25C7.75 19.5833 7.74792 19.7367 7.73272 19.8477C7.72329 19.9165 7.71516 19.9224 7.70755 19.9338L9.36791 21.0488C9.78194 20.4322 9.75 19.7858 9.75 19.25H7.75ZM7.92702 22.0035C8.23884 21.9432 8.52867 21.7881 8.73184 21.6535C8.93501 21.5189 9.19085 21.3124 9.36791 21.0488L7.70754 19.9338C7.7142 19.9239 7.7195 19.9169 7.72274 19.9128C7.72601 19.9086 7.72793 19.9065 7.72811 19.9063C7.72818 19.9062 7.72394 19.9109 7.71436 19.9196C7.69439 19.9378 7.66422 19.9617 7.62713 19.9863C7.59004 20.0108 7.55623 20.0293 7.53174 20.0406C7.51998 20.046 7.51402 20.0481 7.51413 20.0481C7.51438 20.048 7.51709 20.0471 7.52219 20.0457C7.52723 20.0443 7.53572 20.0421 7.54745 20.0399L7.92702 22.0035ZM23.5873 21.7774C25.738 20.8671 27.25 18.7363 27.25 16.25H25.25C25.25 17.9049 24.2448 19.3273 22.8077 19.9356L23.5873 21.7774ZM27.25 16.25C27.25 13.7637 25.738 11.6329 23.5873 10.7226L22.8077 12.5644C24.2448 13.1727 25.25 14.5951 25.25 16.25H27.25ZM22.25 19.25V13.25H20.25V19.25H22.25ZM23.5873 10.7226C23.4254 10.654 23.1928 10.5518 22.9429 10.4973C22.6506 10.4337 22.3718 10.4387 22.073 10.4965L22.4526 12.4601C22.4972 12.4515 22.5157 12.4514 22.5175 12.4514C22.5186 12.4514 22.5178 12.4514 22.5161 12.4512C22.5145 12.451 22.5146 12.4509 22.5173 12.4515C22.524 12.453 22.545 12.4582 22.5944 12.4768C22.6474 12.4967 22.7092 12.5227 22.8077 12.5644L23.5873 10.7226ZM22.25 13.25C22.25 12.9167 22.2521 12.7633 22.2673 12.6523C22.2767 12.5835 22.2848 12.5776 22.2925 12.5662L20.6321 11.4512C20.2181 12.0678 20.25 12.7142 20.25 13.25H22.25ZM22.073 10.4965C21.7612 10.5568 21.4713 10.7119 21.2682 10.8465C21.065 10.9811 20.8092 11.1876 20.6321 11.4512L22.2925 12.5662C22.2858 12.5761 22.2805 12.5831 22.2773 12.5872C22.274 12.5914 22.2721 12.5935 22.2719 12.5937C22.2718 12.5938 22.2761 12.5891 22.2856 12.5804C22.3056 12.5622 22.3358 12.5383 22.3729 12.5137C22.41 12.4892 22.4438 12.4707 22.4683 12.4594C22.48 12.454 22.486 12.4519 22.4859 12.4519C22.4856 12.452 22.4829 12.4529 22.4778 12.4543C22.4728 12.4557 22.4643 12.4579 22.4526 12.4601L22.073 10.4965ZM22.8077 19.9356C22.7092 19.9773 22.6474 20.0033 22.5944 20.0232C22.5451 20.0418 22.524 20.047 22.5173 20.0485C22.5146 20.0491 22.5145 20.049 22.5161 20.0488C22.5178 20.0486 22.5186 20.0486 22.5175 20.0486C22.5157 20.0486 22.4972 20.0485 22.4526 20.0399L22.073 22.0035C22.3718 22.0613 22.6506 22.0663 22.9429 22.0027C23.1928 21.9482 23.4254 21.846 23.5873 21.7774L22.8077 19.9356ZM20.25 19.25C20.25 19.7858 20.2181 20.4322 20.6321 21.0488L22.2925 19.9338C22.2848 19.9224 22.2767 19.9165 22.2673 19.8477C22.2521 19.7367 22.25 19.5833 22.25 19.25H20.25ZM22.4526 20.0399C22.4643 20.0421 22.4728 20.0443 22.4778 20.0457C22.4829 20.0471 22.4856 20.048 22.4859 20.0481C22.486 20.0481 22.48 20.046 22.4683 20.0406C22.4438 20.0293 22.41 20.0108 22.3729 19.9863C22.3358 19.9617 22.3056 19.9378 22.2856 19.9196C22.2761 19.9109 22.2718 19.9062 22.2719 19.9063C22.2721 19.9065 22.274 19.9086 22.2773 19.9128C22.2805 19.9169 22.2858 19.9239 22.2925 19.9338L20.6321 21.0488C20.8092 21.3124 21.065 21.5189 21.2682 21.6535C21.4713 21.7881 21.7612 21.9432 22.073 22.0035L22.4526 20.0399ZM7.25 12.5C7.25 8.21979 10.7198 4.75 15 4.75V2.75C9.61522 2.75 5.25 7.11522 5.25 12.5H7.25ZM15 4.75C19.2802 4.75 22.75 8.21979 22.75 12.5H24.75C24.75 7.11522 20.3848 2.75 15 2.75V4.75ZM22.75 21.25V22.5H24.75V21.25H22.75ZM21.25 24H15V26H21.25V24ZM22.75 22.5C22.75 23.3284 22.0784 24 21.25 24V26C23.183 26 24.75 24.433 24.75 22.5H22.75Z" fill="#9C163A"/>
+</svg>
+</span>
+</div>
+<div class="fixed-btns__list">
+<div class="fixed-btns__btn">
+<a href="tel:83832300300" class="fixed-btns__btn-a">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.2253 12.1939C12.0203 13.8496 13.1039 15.4014 14.4763 16.7737C15.8486 18.1461 17.4004 19.2297 19.0561 20.0247C19.1985 20.0931 19.2697 20.1272 19.3598 20.1535C19.68 20.2468 20.0732 20.1798 20.3444 19.9856C20.4207 19.931 20.4859 19.8657 20.6165 19.7351C21.0158 19.3358 21.2154 19.1362 21.4162 19.0057C22.1733 18.5134 23.1494 18.5134 23.9065 19.0057C24.1072 19.1362 24.3069 19.3358 24.7062 19.7351L24.9288 19.9577C25.5357 20.5647 25.8392 20.8682 26.0041 21.1941C26.332 21.8424 26.332 22.6079 26.0041 23.2561C25.8392 23.5821 25.5357 23.8856 24.9288 24.4925L24.7487 24.6726C24.1438 25.2775 23.8414 25.5799 23.4302 25.8109C22.9739 26.0673 22.2652 26.2515 21.7418 26.25C21.2702 26.2486 20.9479 26.1571 20.3032 25.9741C16.8386 24.9908 13.5694 23.1354 10.842 20.408C8.1146 17.6806 6.25923 14.4114 5.27588 10.9468C5.0929 10.3021 5.00141 9.97981 5.00001 9.50817C4.99845 8.98482 5.18275 8.27613 5.43907 7.81984C5.67006 7.40863 5.97252 7.10618 6.57742 6.50128L6.75746 6.32124C7.36444 5.71426 7.66793 5.41077 7.99387 5.24591C8.64211 4.91803 9.40764 4.91803 10.0559 5.24591C10.3818 5.41077 10.6853 5.71426 11.2923 6.32124L11.5149 6.54381C11.9142 6.9431 12.1138 7.14275 12.2443 7.34352C12.7366 8.10063 12.7366 9.07668 12.2443 9.83379C12.1138 10.0346 11.9142 10.2342 11.5149 10.6335C11.3843 10.7641 11.319 10.8293 11.2644 10.9056C11.0702 11.1768 11.0032 11.57 11.0965 11.8902C11.1228 11.9803 11.1569 12.0515 11.2253 12.1939Z" stroke="#9C163A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</a>
+</div>
+<div class="fixed-btns__btn">
+<a href="#" class="fixed-btns__btn-a">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 12.5H20M10 17.5H15M26.25 15C26.25 21.2132 21.2132 26.25 15 26.25C13.5538 26.25 12.1713 25.9771 10.9012 25.48C10.4239 25.2932 9.90747 25.213 9.40199 25.2982L4.61595 26.1042C4.19217 26.1755 3.82447 25.8078 3.89583 25.3841L4.70184 20.598C4.78697 20.0925 4.70684 19.5761 4.52001 19.0988C4.0229 17.8287 3.75 16.4462 3.75 15C3.75 8.7868 8.7868 3.75 15 3.75C21.2132 3.75 26.25 8.7868 26.25 15Z" stroke="#9C163A" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="popup-map lenis">
+<div class="popup-map__inner">
+<div class="popup-map__closer">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.00727669 1.39092L1.39075 0.00744673L17.9924 16.6091L16.6089 17.9926L0.00727669 1.39092Z" fill="#9C163A"/>
+<path d="M16.6089 0.00744673L17.9924 1.39092L1.39075 17.9926L0.00727608 16.6091L16.6089 0.00744673Z" fill="#9C163A"/>
+</svg>
+</div>
+<div class="popup-map__text">
+<div class="popup-map__title">Улица Орджоникидзе, 31 Центральный район, Новосибирск</div>
+<div class="popup-map__btn">
+<a href="#" class="button button-primary"><span>Построить маршрут</span></a>
+</div>
+</div>
+<div class="popup-map__image">
+<picture class="picture header">
+<source media="(min-width: 481px)" srcset="include/images/popup_map_image.png">
+<source media="(max-width: 480px)" srcset="include/images/map-popup_mobile_image.svg">
+<img src="include/images/popup_map_image.png" alt="popup_map_image">
+</picture>
+</div>
+</div>
+</div>
+<div class="history_popup">
+<div class="history_popup__main">
+<div class="history_popup__closer">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.00727669 1.39092L1.39075 0.00744673L17.9924 16.6091L16.6089 17.9926L0.00727669 1.39092Z" fill="#9C163A"/>
+<path d="M16.6089 0.00744673L17.9924 1.39092L1.39075 17.9926L0.00727608 16.6091L16.6089 0.00744673Z" fill="#9C163A"/>
+</svg>
+</div>
+<a href="#video_block" class="history_popup__video">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.2148 6.62036L0.961679 12.54L0.961679 0.700687L11.2148 6.62036Z" fill="#9C163A" />
+</svg>
+</a>
+<div class="history_popup__inner lenis">        
+<div class="history_popup_body">
+<div class="title">Кулинарное искусство Grand Autograph</div>
+<div class="name">История Артака Шекояна</div>
+<div class="text"><i>Меню ресторанов отеля Grand Autograph - это мир авторской кухни, где каждый рецепт превращается в шедевр под руководством нашего талантливого шеф-повара. Все блюда, которые вы попробуете у нас, созданы под чутким, но уверенным руководством Артака Шекояна, который признан лучшим в номинации «Молодой шеф Сибири» по версии премии «Что Где Есть в Сибири». Сегодня мы ближе познакомимся с человеком, который стоит за этой кулинарной магией.</i></div>
+<div class="image">
+<img src="include/images/his.jpg" alt="">
+</div>
+<div class="years">
+<div class="item">
+<div class="year">1989</div>
+<div class="body">Артак Шекоян родился в октябре 1989 года в солнечной Армении, в живописном городе Алаверди. В возрасте трех лет он вместе с семьей переехал в  Россию, в город Барнаул, где прошла его юность.</div>
+<div class="img">
+<img src="include/images/y1.jpg" alt="">
+</div>
+</div>
+<div class="item level-1">
+<div class="year">2007</div>
+<div class="body">
+<p>Артак не сразу решил связать свою судьбу с профессией повара. Он учился в специализированном лицее РАЭПШ (Российско-Американская экспериментальная профессиональна школа) по направлению правоведение (юриспруденция). А вот после его окончания в 2007 году Артак устроился в огромный мясной цех, состоящий из трех этажей.</p>
+<blockquote>«Мне всегда нравилось смотреть, как мама готовит любимую еду, - признается Артак, - как отец разделывает мясо и жарит его, и я старался помогать».</blockquote>
+<p>Поэтому в качестве подработки он выбрал для себя это направление.</p>
+<p>В цехе он проработал около года, получив уникальный опыт работы с мясом:</p>
+<blockquote>«Работа в мясном цехе была для меня большим опытом, количество сотрудников - около 30 профессиональных мясников, которые поражали своими навыками: каждое движение ножом вызывало уважение».</blockquote>
+<p>Параллельно Артак поступил в Международный институт экономики и права в Новокузнецке, на юридический факультет заочного отделения, сдавал сессии, но в то же время пробовал себя в разных кафе и ресторанах Барнаула, набираясь опыта.</p>
+</div>
+<div class="img">
+<img src="include/images/y2.jpg" alt="">
+</div>
+</div>
+<div class="item level-4">
+<div class="year">2013</div>
+<div class="body">
+<p>После окончания института Артак решил переехать в столицу Сибири - Новосибирск. Здесь он встретил свою будущую жену, с которой позже у них родилась прекрасная дочь.</p>
+<blockquote>«Работая в Новосибирске, я искал себе место по душе, - рассказывает Артак. - После нескольких заведений, остановился в гриль-баре «Дружба», где освоил уникальный гриль (Аргентинская парилья) и проработал на всех станциях кухни».</blockquote>
+</div>
+<div class="img">
+<img src="include/images/y3.jpg" alt="">
+</div>
+</div>
+<div class="item">
+<div class="year">2019</div>
+<div class="body">
+<p>После четырех лет работы в «Дружбе», Артак решил двигаться дальше. Он подал резюме и получил предложение от отеля Grand Autograph (ex. Marriott). Замотивированный поддержкой жены и перспективой работы в международном отеле, Артак принял предложение:</p>
+<blockquote>«Всегда проезжал мимо этого прекрасного здания и думал, что там работают боги кулинарии».</blockquote>
+</div>
+</div>
+</div>
+<div class="item level-last">
+<div class="year">2023</div>
+<div class="body">
+<p>С 1 января 2023 года Артак Шекоян официально стал шеф-поваром Grand Autograph, ранее занимая должность заместителя шеф-повара. За время работы в отеле он пережил пандемию, смену бренда и многих руководителей, что помогло ему стать тем, кем он является сегодня.</p>
+<blockquote>«Для меня работа в Grand Autograph - это мировой уровень, многозадачность, профессиональное развитие и огромная ответственность с двумя ресторанами и полноценным банкетным направлением. Надо быть психологом, чтобы руководить таким большим составом поваров».</blockquote>
+<p>Среди своих принципов, которыми он руководствуется в работе и жизни, Артак называет честность, принципиальность, трудолюбие, открытость и доброту.</p>
+<p>В своей работе Артак старается сохранить заложенные стандарты профессионалов, у которых он многому научился. В будущем он видит процветание как ресторанов, так и отеля в целом:</p>
+<blockquote>«Я уверен, что передача этих стандартов «по наследству» сделает нашу команду вне конкуренции, даже спустя 10-15 лет!»</blockquote>
+<p>Познакомьтесь с Артаком Шекояном и попробуйте блюда, которые он создает с любовью и мастерством в ресторанах отеля Grand Autograph. Забронировать столик и насладиться изысканной кухней вы можете уже сегодня.</p>
+</div>
+</div>
+<div class="video" id="video_block">
+<video src="files/test_video.mp4" controls="false" poster="include/images/his-v.jpg" autobuffer="autobuffer" playsinline="playsinline" preload="metadata"></video>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mobile_fixed_btns">
+<div class="fixed-btns__btn">
+<a href="tel:83832300300" class="fixed-btns__btn-a">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.2253 12.1939C12.0203 13.8496 13.1039 15.4014 14.4763 16.7737C15.8486 18.1461 17.4004 19.2297 19.0561 20.0247C19.1985 20.0931 19.2697 20.1272 19.3598 20.1535C19.68 20.2468 20.0732 20.1798 20.3444 19.9856C20.4207 19.931 20.4859 19.8657 20.6165 19.7351C21.0158 19.3358 21.2154 19.1362 21.4162 19.0057C22.1733 18.5134 23.1494 18.5134 23.9065 19.0057C24.1072 19.1362 24.3069 19.3358 24.7062 19.7351L24.9288 19.9577C25.5357 20.5647 25.8392 20.8682 26.0041 21.1941C26.332 21.8424 26.332 22.6079 26.0041 23.2561C25.8392 23.5821 25.5357 23.8856 24.9288 24.4925L24.7487 24.6726C24.1438 25.2775 23.8414 25.5799 23.4302 25.8109C22.9739 26.0673 22.2652 26.2515 21.7418 26.25C21.2702 26.2486 20.9479 26.1571 20.3032 25.9741C16.8386 24.9908 13.5694 23.1354 10.842 20.408C8.1146 17.6806 6.25923 14.4114 5.27588 10.9468C5.0929 10.3021 5.00141 9.97981 5.00001 9.50817C4.99845 8.98482 5.18275 8.27613 5.43907 7.81984C5.67006 7.40863 5.97252 7.10618 6.57742 6.50128L6.75746 6.32124C7.36444 5.71426 7.66793 5.41077 7.99387 5.24591C8.64211 4.91803 9.40764 4.91803 10.0559 5.24591C10.3818 5.41077 10.6853 5.71426 11.2923 6.32124L11.5149 6.54381C11.9142 6.9431 12.1138 7.14275 12.2443 7.34352C12.7366 8.10063 12.7366 9.07668 12.2443 9.83379C12.1138 10.0346 11.9142 10.2342 11.5149 10.6335C11.3843 10.7641 11.319 10.8293 11.2644 10.9056C11.0702 11.1768 11.0032 11.57 11.0965 11.8902C11.1228 11.9803 11.1569 12.0515 11.2253 12.1939Z" stroke="#9C163A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</a>
+</div>
+<div class="fixed-btns__btn">
+<a href="#" class="fixed-btns__btn-a">
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 12.5H20M10 17.5H15M26.25 15C26.25 21.2132 21.2132 26.25 15 26.25C13.5538 26.25 12.1713 25.9771 10.9012 25.48C10.4239 25.2932 9.90747 25.213 9.40199 25.2982L4.61595 26.1042C4.19217 26.1755 3.82447 25.8078 3.89583 25.3841L4.70184 20.598C4.78697 20.0925 4.70684 19.5761 4.52001 19.0988C4.0229 17.8287 3.75 16.4462 3.75 15C3.75 8.7868 8.7868 3.75 15 3.75C21.2132 3.75 26.25 8.7868 26.25 15Z" stroke="#9C163A" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</a>
+</div>
+<a href="" class="button book__btn">Забронировать номер</a>
+</div>
+</div>
+</body>
+</html>
