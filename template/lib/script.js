@@ -1744,5 +1744,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 },   
             });
         },
+        placetSlider: function(){
+            const restaurantWrapper = document.querySelector('.place_block_wr');
+
+            if(!restaurantWrapper) return; 
+
+            const sliderImage = new Swiper('.right_slider_place', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: '.place_arrow.swiper-button-next',
+                    prevEl: '.place_arrow.swiper-button-prev',
+                },
+            });
+
+            const sliderText = new Swiper('.left_slider_place', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: '.place_arrow_btn.swiper-button-next',
+                    prevEl: '.place_arrow_btn.swiper-button-prev',
+                },
+                pagination: {
+                    el: ".left_slider_bottom .pagination_place",
+                    type: "fraction",
+                },   
+            });
+        },
     }
 }())
