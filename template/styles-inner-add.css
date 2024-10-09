@@ -952,6 +952,13 @@
     line-height: 120%;
     text-transform: uppercase;
     color: #393335;
+    max-width: calc(100% - 180px);
+}
+.position_block .block-padding .slider_bottom .text .swiper-slide {
+    opacity: 0 !important;
+}
+.position_block .block-padding .slider_bottom .text .swiper-slide.swiper-slide-active {
+    opacity: 1 !important;
 }
 .position_block .block-padding .body {
     display: none;
@@ -1625,7 +1632,7 @@
     font-size: 20px;
     color: #fff;
     opacity: 0.5;
-    max-width: 600px;
+    padding-right: 26%;
 }
 .events_items .inner_block .swiper-slide .body .more {
     position: absolute;
@@ -1778,6 +1785,7 @@
     }
     .events_items .inner_block .swiper-slide .body .text {
         font-size: 16px;
+        padding-right: 32%;
     }
     .events_items .inner_block .swiper-slide .body .more {
         bottom: 40px;
@@ -2130,6 +2138,10 @@
     gap: 62px;
     z-index: 1;
     position: relative;
+}
+.top_inner_bg.event_page .events_block_wr .events_top .pagination_events {
+    color: #fff;
+    opacity: 0.5;
 }
 .top_inner_bg.event_page .events_block_wr .events_top .left_slider {
     -webkit-box-flex: 0;
@@ -3128,7 +3140,8 @@
 .site-wrapper.inner_page_main.restaurant .site-header:not(.fixed) .site-header__burger-btn span {
     background: rgb(var(--white));
 }
-.site-wrapper.inner_page_main.restaurant .site-header:not(.fixed) .site-header__burger-btn span svg rect, .site-wrapper.inner_page_main.restaurant .site-header:not(.fixed) .site-header__burger-btn span svg path {
+.site-wrapper.inner_page_main.restaurant .site-header:not(.fixed) .site-header__burger-btn span svg rect,
+.site-wrapper.inner_page_main.restaurant .site-header:not(.fixed) .site-header__burger-btn span svg path {
     fill: #c34e50;
 }
 .site-wrapper.inner_page_main.restaurant .site-header:not(.fixed) .site-header__logo .logo_red {
@@ -3201,7 +3214,8 @@
 .restaurant .fitnes_block_wr .fitnes_top .left_slider .title {
     color: #37241d;
 }
-.restaurant .swiper-button-next, .restaurant .swiper-button-prev {
+.restaurant .swiper-button-next,
+.restaurant .swiper-button-prev {
     background: #c34e50;
 }
 .restaurant .fitnes_block_wr .fitnes_top .right_slider:before {
@@ -3955,6 +3969,12 @@
             align-items: center;
     gap: 40px;
 }
+.rest_slider_wr .rest_slider_top .left_slider .swiper-slide {
+    opacity: 0 !important;
+}
+.rest_slider_wr .rest_slider_top .left_slider .swiper-slide.swiper-slide-active {
+    opacity: 1 !important;
+}
 .rest_slider_wr .rest_slider_top .right_slider {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(70% - 62px);
@@ -4512,10 +4532,12 @@
 .restaurant_invert .fitnes_block_wr .fitnes_top .left_slider .title {
     color: #37241d;
 }
-.restaurant_invert .swiper-button-next, .restaurant_invert .swiper-button-prev {
+.restaurant_invert .swiper-button-next,
+.restaurant_invert .swiper-button-prev {
     background: rgba(129, 129, 129, 0.3);
 }
-.restaurant_invert .swiper-button-next:hover, .restaurant_invert .swiper-button-prev:hover {
+.restaurant_invert .swiper-button-next:hover,
+.restaurant_invert .swiper-button-prev:hover {
     background: #f2b770;
 }
 .restaurant_invert .fitnes_block_wr .fitnes_top .right_slider:before {
@@ -4543,6 +4565,7 @@
 }
 .restaurant_invert .chef_block_wr .block-padding .right:before {
     background: url("data:image/svg+xml,%3Csvg width='102' height='80' viewBox='0 0 102 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.6084 39.1031C30.5525 39.1031 35.4266 41.136 39.2308 45.2018C43.2727 49.0284 45.2937 53.8117 45.2937 59.5516C45.2937 65.2915 43.1538 70.1943 38.8741 74.2601C34.8322 78.0867 29.6014 80 23.1818 80C16.2867 80 10.6993 77.6084 6.41958 72.8251C2.13986 67.8027 0 60.5082 0 50.9417C0 30.1345 11.2937 13.154 33.8811 0L37.0909 3.94618C30.6713 9.44693 26.2727 14.9477 23.8951 20.4484C21.5175 25.71 20.3287 31.6891 20.3287 38.3856V39.1031H24.6084ZM81.3147 39.1031C87.2587 39.1031 92.1329 41.136 95.9371 45.2018C99.979 49.0284 102 53.8117 102 59.5516C102 65.2915 99.8601 70.1943 95.5804 74.2601C91.5385 78.0867 86.3077 80 79.8881 80C72.993 80 67.4056 77.6084 63.1259 72.8251C58.8462 67.8027 56.7063 60.5082 56.7063 50.9417C56.7063 30.1345 68 13.154 90.5874 0L93.7972 3.94618C87.3776 9.44693 82.979 14.9477 80.6014 20.4484C78.2238 25.71 77.035 31.6891 77.035 38.3856V39.1031H81.3147Z' fill='%23f2b770' /%3E%3C/svg%3E") 50% no-repeat;
+    background-size: contain;
 }
 .restaurant_invert .chef_block_wr .block-padding .left .chef_text .title {
     color: #818181;
@@ -4586,7 +4609,8 @@
 .site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__burger-btn span {
     background: rgb(var(--white));
 }
-.site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__burger-btn span svg rect, .site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__burger-btn span svg path {
+.site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__burger-btn span svg rect,
+.site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__burger-btn span svg path {
     fill: #3A3A3A;
 }
 .site-wrapper.inner_page_main.restaurant_invert .site-header:not(.fixed) .site-header__logo .logo_red {
@@ -4822,6 +4846,8 @@
     -webkit-transition: all 2s ease;
     transition: all 2s ease;
     opacity: 0;
+    position: relative;
+    z-index: 3;
 }
 .form_bottom_rest.showed .form_inner {
     -webkit-transform: translateY(0%);
@@ -4927,17 +4953,20 @@
     }
 }
 
-.spec_page .review_slider_wrapper, .congress_page .review_slider_wrapper {
+.spec_page .review_slider_wrapper,
+.congress_page .review_slider_wrapper {
     padding-top: 67px;
     position: relative;
     z-index: 1;
 }
 @media all and (min-width: 1441px) {
-    .spec_page .review_slider_wrapper, .congress_page .review_slider_wrapper {
+    .spec_page .review_slider_wrapper,
+    .congress_page .review_slider_wrapper {
         margin-top: -1px;
     }
 }
-.spec_page .review_slider_wrapper:before, .congress_page .review_slider_wrapper:before {
+.spec_page .review_slider_wrapper:before,
+.congress_page .review_slider_wrapper:before {
     content: "";
     position: absolute;
     top: 0;
@@ -4946,28 +4975,34 @@
     height: 410px;
     background: #9C163A;
 }
-.spec_page .review_slider_wrapper .title_slider_block .title, .congress_page .review_slider_wrapper .title_slider_block .title {
+.spec_page .review_slider_wrapper .title_slider_block .title,
+.congress_page .review_slider_wrapper .title_slider_block .title {
     color: #FFFFFF;
     position: relative;
 }
 @media all and (min-width: 1201px) and (max-width: 1440px) {
-    .spec_page .review_slider_wrapper, .congress_page .review_slider_wrapper {
+    .spec_page .review_slider_wrapper,
+    .congress_page .review_slider_wrapper {
         padding-top: 30px;
     }
-    .spec_page .review_slider_wrapper:before, .congress_page .review_slider_wrapper:before {
+    .spec_page .review_slider_wrapper:before,
+    .congress_page .review_slider_wrapper:before {
         height: 314px;
     }
 }
 @media all and (max-width: 1200px) {
-    .spec_page .review_slider_wrapper, .congress_page .review_slider_wrapper {
+    .spec_page .review_slider_wrapper,
+    .congress_page .review_slider_wrapper {
         padding-top: 30px;
     }
-    .spec_page .review_slider_wrapper:before, .congress_page .review_slider_wrapper:before {
+    .spec_page .review_slider_wrapper:before,
+    .congress_page .review_slider_wrapper:before {
         height: 164px;
     }
 }
 @media all and (max-width: 767px) {
-    .spec_page .review_slider_wrapper .title_slider_block .title, .congress_page .review_slider_wrapper .title_slider_block .title {
+    .spec_page .review_slider_wrapper .title_slider_block .title,
+    .congress_page .review_slider_wrapper .title_slider_block .title {
         font-size: 1.5rem;
     }
 }
@@ -5750,7 +5785,8 @@
     font-size: 12px;
     color: #b8b8b8;
 }
-.bottom_form_cong .form_inner .row_form .form_field input, .bottom_form_cong .form_inner .row_form .form_field select {
+.bottom_form_cong .form_inner .row_form .form_field input,
+.bottom_form_cong .form_inner .row_form .form_field select {
     border-radius: 46px;
     height: 60px;
     padding: 30px 20px 10px;
@@ -5763,7 +5799,8 @@
     text-align: left;
     width: 100%;
 }
-.bottom_form_cong .form_inner .row_form .form_field input::-webkit-input-placeholder, .bottom_form_cong .form_inner .row_form .form_field select::-webkit-input-placeholder {
+.bottom_form_cong .form_inner .row_form .form_field input::-webkit-input-placeholder,
+.bottom_form_cong .form_inner .row_form .form_field select::-webkit-input-placeholder {
     color: #393335;
 }
 .bottom_form_cong .form_inner .row_form .form_field_btn {

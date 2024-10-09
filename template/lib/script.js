@@ -204,9 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.burger-block__menu ul li a').forEach((item) => {
                     item.addEventListener('mouseenter', () => {
                         if(!item.classList.contains('active')) {
-                            //document.querySelector('.burger-block__image').classList.add('v_hidden');
-                            //document.querySelector('.burger-block__image').classList.remove('scale')
-                            document.querySelector('.burger-block__image').remove();
+                            document.querySelector('.burger-block__image')?.remove();
                             document.querySelectorAll('.burger-block__menu ul li a').forEach((element) => element.classList.remove('active'));
                             if (item.dataset.img) {
                                 item.classList.add('active')
@@ -218,15 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     burgerBlock.appendChild(burgerImage);
                                     document.querySelector('.burger-block__top').appendChild(burgerBlock);
                                 setTimeout(() => {
-                                    //document.querySelector('.burger-block__image img').setAttribute('src', item.dataset.img)
-                                    //document.querySelector('.burger-block__image').classList.remove('v_hidden')
+                                    document.querySelector('.burger-block__image')?.classList.add('scale')
                                 }, 300)
-                                setTimeout(() => {
-                                    document.querySelector('.burger-block__image').classList.add('scale')
-                                }, 300)
-                            } else {
-                                //document.querySelector('.burger-block__image').classList.add('v_hidden');
-                            }
+                            } 
                         }
                     })
                 })
@@ -1530,12 +1522,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 fadeEffect: {
                     crossFade: true
                 },
+                navigation: {
+                    nextEl: '.fitnes_arrow_btn.swiper-button-next',
+                    prevEl: '.fitnes_arrow_btn.swiper-button-prev',
+                },
                 pagination: {
                     el: '.fitnes_pagination_block',
                     clickable: true,
                     type: 'bullets',
                     renderBullet: function (index, className) {
-                        // Возвращаем кастомный элемент пагинации
                         return '<span class="' + className + '">' + '<i></i>' + '<b></b>'  + '</span>';
                     },
                 },
@@ -1558,7 +1553,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             });
 
-            // Устанавливаем `sliderText` как thumbs для `sliderImage`, чтобы текстовый слайдер был "миниатюрами"
             sliderImage.thumbs.swiper = sliderText;
         },
         notXSlider: function(){
@@ -1595,7 +1589,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if(!positionWrapper) return; 
 
-            const sliderText = new Swiper('.slider_position', {
+            const sliderImage = new Swiper('.slider_position', {
                 slidesPerView: 1,
                 loop: true,
                 effect: 'slide',
@@ -1606,25 +1600,49 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: '.position_arrow_btn.swiper-button-prev',
                 },  
             });
+
+            const sliderText = new Swiper('.slider_position_text', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'fade',
+                speed: 1000,
+                spaceBetween: 0
+            });
+
+            sliderImage.thumbs.swiper = sliderText;
         },
         eventsSlider: function(){
             const eventsWrapper = document.querySelector('.events_block_wr');
 
             if(!eventsWrapper) return; 
 
-            const sliderImage = new Swiper('.right_slider_events', {
+            const sliderImageE = new Swiper('.right_slider_events', {
                 slidesPerView: 1,
                 loop: true,
                 effect: 'slide',
                 speed: 1000,
                 spaceBetween: 0,
+                autoplay: {
+                    delay: 3000,
+                },
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: {
+                    nextEl: '.events_arrow_btn.swiper-button-next',
+                    prevEl: '.events_arrow_btn.swiper-button-prev',
+                },
                 pagination: {
                     el: '.events_pagination_block',
                     clickable: true,
+                    type: 'bullets',
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + '<i></i>' + '<b></b>'  + '</span>';
+                    },
                 },
             });
 
-            const sliderText = new Swiper('.left_slider_events', {
+            const sliderTextE = new Swiper('.left_slider_events', {
                 slidesPerView: 1,
                 loop: true,
                 effect: 'fade',
@@ -1633,9 +1651,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 navigation: {
                     nextEl: '.events_arrow_btn.swiper-button-next',
                     prevEl: '.events_arrow_btn.swiper-button-prev',
-                },
-                thumbs: {
-                    swiper: sliderImage,
                 },
                 breakpoints: {
                     0: {
@@ -1652,6 +1667,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },    
             });
+
+            sliderImageE.thumbs.swiper = sliderTextE;
         },
         eventsItemSlider: function() {
             const eventWrapper = document.querySelector('.events_items');
