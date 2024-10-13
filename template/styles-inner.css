@@ -2904,7 +2904,38 @@
 .afisha_page .calendar_main td.empty-day {
     cursor: auto;
 }
+.afisha_page .calendar_main td.event-day {
+    background: #393335;
+    color: #fff;
+}
 .afisha_page .calendar_main td:not(.empty-day):hover {
     background: #393335;
     color: #fff;
+}
+
+#tooltip {
+    position: absolute;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    max-width: 155px;
+    margin: 5px 0 0 56px;
+    z-index: 10000;
+    background: #393335;
+    opacity: 0;
+    visibility: hidden;
+}
+#tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+#tooltip:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    width: 19px;
+    height: 9px;
+    background: url("data:image/svg+xml,%3Csvg width='19' height='9' viewBox='0 0 19 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.09327 0L18.1865 9H0L9.09327 0Z' fill='%23393335' /%3E%3C/svg%3E") 50% no-repeat;
 }

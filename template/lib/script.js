@@ -960,42 +960,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
             for (i = 0; i < linkToggle.length; i++) {
 
-                linkToggle[i].addEventListener('click', function (event) {
-                    event.preventDefault();
-                    event.target.classList.toggle('active');
-                    if(event.target.querySelector('.arrow')) {
-                        event.target.querySelector('.arrow').classList.toggle('active');
-                    }
-                    console.log(event.target.querySelector('.arrow'))
-                    event.target.closest('li').classList.toggle('active');
-                    let container = event.target.nextElementSibling;
+                if (window.innerWidth <= 980) {
+                    linkToggle[i].addEventListener('click', function (event) {
+                        event.preventDefault();
+                        event.target.classList.toggle('active');
+                        if(event.target.querySelector('.arrow')) {
+                            event.target.querySelector('.arrow').classList.toggle('active');
+                        }
+                        console.log(event.target.querySelector('.arrow'))
+                        event.target.closest('li').classList.toggle('active');
+                        let container = event.target.nextElementSibling;
 
-                    if (!container.classList.contains('active')) {
+                        if (!container.classList.contains('active')) {
 
-                        container.classList.add('active');
-                        container.style.height = 'auto';
+                            container.classList.add('active');
+                            container.style.height = 'auto';
 
-                        let height = container.clientHeight + 'px';
+                            let height = container.clientHeight + 'px';
 
-                        container.style.height = '0px';
+                            container.style.height = '0px';
 
-                        setTimeout(function () {
-                            container.style.height = height;
-                        }, 0);
+                            setTimeout(function () {
+                                container.style.height = height;
+                            }, 0);
 
-                    } else {
+                        } else {
 
-                        container.style.height = '0px';
+                            container.style.height = '0px';
 
-                        container.addEventListener('transitionend', function () {
-                            container.classList.remove('active');
-                        }, {
-                            once: true
-                        });
+                            container.addEventListener('transitionend', function () {
+                                container.classList.remove('active');
+                            }, {
+                                once: true
+                            });
 
-                    }
+                        }
 
-                });
+                    });
+                }
 
             }
         },
@@ -1361,7 +1363,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.addEventListener('load', setEqualHeight);
             window.addEventListener('resize', setEqualHeight);
         },
-        afishaCalendar: function(){
+        afishaCalendar: function() {
             const year = new Date().getFullYear();
             const currentMonth = new Date().getMonth();
             const days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
@@ -1370,9 +1372,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
             ];
 
-            const wrapper = document.querySelector(".calendar_main .wrapper");
+            const events = [
+                { date: `${year}-10-15`, title: "Концерт группы XYZ" },
+                { date: `${year}-10-21`, title: "Театральное представление" },
+                { date: `${year}-11-05`, title: "Фестиваль искусств" },
+                // Добавьте другие события
+            ];
 
-            if (!wrapper) return;
+            const wrapper = document.querySelector(".calendar_main .wrapper");
+            const tooltip = document.getElementById("tooltip");
+
+            if (!wrapper || !tooltip) return;
+
+            function showTooltip(td, text) {
+                tooltip.textContent = text;
+
+                const rect = td.getBoundingClientRect();
+                const tooltipX = rect.left + window.scrollX + rect.width / 2 - tooltip.offsetWidth / 2;
+                const tooltipY = rect.top + window.scrollY + rect.height + 5; 
+
+                tooltip.style.left = `${tooltipX}px`;
+                tooltip.style.top = `${tooltipY}px`;
+                tooltip.classList.add("visible");
+            }
+
+            function hideTooltip() {
+                tooltip.classList.remove("visible");
+            }
 
             function generateCalendar() {
                 for (let month = 0; month < 12; month++) {
@@ -1437,13 +1463,29 @@ document.addEventListener('DOMContentLoaded', function () {
                             const td = document.createElement("td");
                             td.textContent = day.date;
                             td.dataset.date = `${year}-${month + 1}-${day.date}`;
-                            
+
                             if (!day.date) {
-                                td.classList.add("empty-day"); // Добавляем класс пустым ячейкам
+                                td.classList.add("empty-day");
                             } else {
                                 td.addEventListener("click", function() {
                                     this.classList.toggle("selected");
                                 });
+
+                                // Проверяем, есть ли событие на эту дату
+                                const event = events.find(
+                                    (event) => event.date === td.dataset.date
+                                );
+                                if (event) {
+                                    td.classList.add("event-day");
+                                    td.dataset.event = event.title;
+
+                                    // Показываем всплывающую подсказку при наведении
+                                    td.addEventListener("mouseenter", () => {
+                                        showTooltip(td, event.title);
+                                    });
+
+                                    td.addEventListener("mouseleave", hideTooltip);
+                                }
                             }
 
                             if (isToday(day, month)) {
@@ -1503,6 +1545,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 initialSlide: currentMonth
             });
         },
+
+
         fitnesSlider: function() {
             const fitnesWrapper = document.querySelector('.fitnes_block_wr');
             if (!fitnesWrapper) return;
