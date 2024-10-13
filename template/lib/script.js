@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function () {
         blockAnimations: function () {
             gsap.registerPlugin(ScrollTrigger/*, SplitText*/);
 
-            const imageItems = document.querySelectorAll('.image-item-wr, .restaurants-block__bottom-slider, .interiors-block__left-slider, .interiors-block__right-slider, .announces-block__slider, .fitnes_block_wr .left_slider,.fitnes_block_wr .right_slider,.chef_block_wr .block-padding .left,.menu_food_block,.rest_slider_wr,.form_bottom_rest, .announces_list_wrap .announces-block__slider-item');
+            const imageItems = document.querySelectorAll('.image-item-wr, .restaurants-block__bottom-slider, .interiors-block__left-slider, .interiors-block__right-slider, .announces-block__slider, .fitnes_block_wr .left_slider,.fitnes_block_wr .right_slider,.chef_block_wr .block-padding .left,.menu_food_block,.rest_slider_wr,.rest_slider_wr_congress,.form_bottom_rest, .announces_list_wrap .announces-block__slider-item');
 
             const observerOptions = {
                 root: null, // viewport
@@ -1131,19 +1131,22 @@ document.addEventListener('DOMContentLoaded', function () {
             if(!tabsBody.length) return;
 
             tabsBody.forEach((slider) => {
-                const sliderBlock = slider.querySelector('.swiper');
-                const prevBtn = slider.querySelector('.swiper-button-prev');
-                const nextBtn = slider.querySelector('.swiper-button-next');
 
-                const tabSlider = new Swiper(`.${sliderBlock.className}`, {
+                const sliderBlock = slider.querySelector('.swiper');
+                const sliderClass = sliderBlock.dataset.slider;
+                const arrow = slider.querySelector('.announces-block__nav')?.dataset.arrow;
+
+
+
+                const tabSlider = new Swiper(`.${sliderClass}`, {
                     slidesPerView: 3,
                     loop: true,
                     effect: 'slide',
                     speed: 1000,
                     spaceBetween: 20,
                     navigation: {
-                        nextEl: `.${nextBtn.className}`,
-                        prevEl: `.${prevBtn.className}`,
+                        nextEl: `.swiper-${arrow}-prev`,
+                        prevEl: `.swiper-${arrow}-next`,
                     },
                     breakpoints: {
                         0: {
@@ -1714,6 +1717,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
             sliderImageE.thumbs.swiper = sliderTextE;
         },
+        eventSlider: function(){
+            const eventsWrapper = document.querySelector('.event_block_wr');
+
+            if(!eventsWrapper) return; 
+
+            const sliderImageE = new Swiper('.right_slider_events', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 0,
+                autoplay: {
+                    delay: 3000,
+                },
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: {
+                    nextEl: '.events_arrow_btn.swiper-button-next',
+                    prevEl: '.events_arrow_btn.swiper-button-prev',
+                },
+                breakpoints: {
+                    0: {
+                        pagination: {
+                            el: ".right_slider_bottom .pagination_events",
+                            type: "fraction",
+                        },
+                    },
+                    768: {
+                        pagination: {
+                            el: ".left_slider_bottom .pagination_events",
+                            type: "fraction",
+                        },
+                    }
+                },   
+            });
+        },
         eventsItemSlider: function() {
             const eventWrapper = document.querySelector('.events_items');
 
@@ -1807,8 +1847,37 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         placetSlider: function(){
             const restaurantWrapper = document.querySelector('.place_block_wr');
+            const congressWrapper = document.querySelector('.rest_slider_wr');
 
-            if(!restaurantWrapper) return; 
+            if(!restaurantWrapper && !congressWrapper) return; 
+
+            const congressSliderImage = new Swiper('.right_slider_rest_slider', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'slide',
+                speed: 1000,
+                spaceBetween: 0,
+            });
+
+            const congressSliderText = new Swiper('.left_slider_rest_slider', {
+                slidesPerView: 1,
+                loop: true,
+                effect: 'fade',
+                speed: 1000,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: '.rest_slider_arrow_btn.swiper-button-next',
+                    prevEl: '.rest_slider_arrow_btn.swiper-button-prev',
+                },
+                thumbs: {
+                    swiper: congressSliderImage,
+                },
+                pagination: {
+                    el: ".left_slider_bottom .pagination_rest_slider",
+                    type: "fraction",
+                },   
+            });
+
 
             const sliderImage = new Swiper('.right_slider_place', {
                 slidesPerView: 1,
@@ -1829,8 +1898,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 speed: 1000,
                 spaceBetween: 0,
                 navigation: {
-                    nextEl: '.place_arrow_btn.swiper-button-next',
-                    prevEl: '.place_arrow_btn.swiper-button-prev',
+                    nextEl: '.rest_slider_arrow_btn.swiper-button-next',
+                    prevEl: '.rest_slider_arrow_btn.swiper-button-prev',
                 },
                 pagination: {
                     el: ".left_slider_bottom .pagination_place",

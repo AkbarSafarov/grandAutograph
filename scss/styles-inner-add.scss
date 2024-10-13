@@ -23,8 +23,8 @@
     }
 }
 
-.service_page {}
 
+/* fitnes_block_wr BEGIN*/
 .fitnes_block_wr {
     background: url(../include/bg_service.png) 50% no-repeat;
     background-size: cover;
@@ -563,7 +563,10 @@
         }
     }
 }
+/* fitnes_block_wr END*/
 
+
+/* block_not_x BEGIN*/
 .block_not_x {
     position: relative;
 
@@ -1004,7 +1007,10 @@
         }
     }
 }
+/* fitnes_block_wr END*/
 
+
+/* position_block BEGIN*/
 .position_block {
     position: relative;
     z-index: 1;
@@ -1202,7 +1208,10 @@
         }
     }
 }
+/* position_block END*/
 
+
+/* top_inner_bg BEGIN*/
 .top_inner_bg {
 
     .block-padding {
@@ -1238,9 +1247,19 @@
         }
     }
 }
+/* top_inner_bg END*/
 
 
-.events_block_wr {
+/* events_block_wr BEGIN*/
+
+.events_page {
+	.site-header .site-header__logo svg path {
+		fill: #fff !important;
+	}
+}
+
+
+.events_block_wr,.event_block_wr {
     padding-bottom: 60px;
 
     .events_top {
@@ -2106,6 +2125,8 @@
     }
 }
 
+
+/* spes_slider_wrapper BEGIN*/
 .spes_slider_wrapper {
     padding-bottom: 5rem;
     position: relative;
@@ -2381,8 +2402,10 @@
         }
     }
 }
+/* spes_slider_wrapper END*/
 
-.top_inner_bg.event_page {
+
+.event_page .top_inner_bg {
     padding-bottom: 52px;
     padding-top: clamp(9.375rem, 4.25rem + 8.3333vw, 9.75rem);
 
@@ -2416,7 +2439,7 @@
         }
     }
 
-    .events_block_wr {
+    .events_block_wr,.event_block_wr {
         padding-bottom: 0;
 
         .events_top {
@@ -2483,33 +2506,35 @@
                     background: #9C163A;
                 }
 
+                .name {
+                    position: absolute;
+                    left: 40px;
+                    top: auto;
+                    bottom: 242px;
+                    max-width: 342px;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 90%;
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-family: var(--second-family);
+                    z-index: 3;
+
+                    .price {
+                        font-weight: 700;
+                        font-size: 40px;
+                        padding-top: 18px;
+                        line-height: 90%;
+                        text-transform: uppercase;
+                        color: #f9f9f9;
+                    }
+                }
+
                 .swiper-slide {
                     padding: 0 0 0 140px;
                     position: relative;
 
-                    .name {
-                        position: absolute;
-                        left: 40px;
-                        top: auto;
-                        bottom: 242px;
-                        max-width: 342px;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 90%;
-                        text-transform: uppercase;
-                        color: #fff;
-                        font-family: var(--second-family);
-                        z-index: 1;
-
-                        .price {
-                            font-weight: 700;
-                            font-size: 40px;
-                            padding-top: 18px;
-                            line-height: 90%;
-                            text-transform: uppercase;
-                            color: #f9f9f9;
-                        }
-                    }
+                    
 
                     .image {
                         position: relative;
@@ -3099,8 +3124,6 @@
     }
 }
 
-
-
 .event_images_main {
     padding-bottom: 38px;
     position: relative;
@@ -3516,6 +3539,8 @@
     }
 }
 
+/* events_block_wr END*/
+
 .site-wrapper.inner_page_main.restaurant {
     background: #F4F6EA;
 
@@ -3606,7 +3631,7 @@
 
 
 
-
+/* restaurant BEGIN*/
 .restaurant {
 
     .fixed-btns__popup-btn span {
@@ -3675,16 +3700,25 @@
         background: #c34e50;
     }
 }
+/* restaurant END*/
 
-.content_main_block.restaurant_page {
-    background: url(../include/bg_f.png) 50% no-repeat;
 
-    .fitnes_block_wr {
-        z-index: 1;
-        position: relative;
-    }
+.restaurant_page {
+	.site-header .site-header__logo svg path {
+		fill: #fff !important;
+	}
+
+	.content_main_block {
+	    background: url(../include/bg_f.png) 50% no-repeat;
+
+	    .fitnes_block_wr {
+	        z-index: 1;
+	        position: relative;
+	    }
+	}
 }
 
+/* chef_block_wr BEGIN*/
 .chef_block_wr {
     padding: 78px 0 0;
 
@@ -3910,7 +3944,9 @@
         }
     }
 }
+/* chef_block_wr END*/
 
+/* gal_res_block BEGIN*/
 .gal_res_block {
     position: relative;
     z-index: 2;
@@ -4159,7 +4195,10 @@
         }
     }
 }
+/* gal_res_block END*/
 
+
+/* menu_food_block BEGIN*/
 .menu_food_block {
     position: relative;
     margin-bottom: 50px;
@@ -4398,7 +4437,9 @@
         }
     }
 }
+/* menu_food_block END*/
 
+/* restaurant inner BEGIN*/
 .restaurant {
     .top_inner_bg {
         padding-bottom: 52px;
@@ -4438,8 +4479,10 @@
         }
     }
 }
+/* restaurant inner END*/
 
-.rest_slider_wr {
+/* rest_slider_wr BEGIN*/
+.rest_slider_wr,.rest_slider_wr_congress {
     padding-bottom: 0;
     background: url(../include/res_bg.jpg) 50% no-repeat;
     background-size: cover;
@@ -4874,7 +4917,10 @@
         }
     }
 }
+/* rest_slider_wr END*/
 
+
+/* form_bottom_rest BEGIN*/
 .form_bottom_rest {
     padding: 20px 0 50px;
 
@@ -4989,7 +5035,9 @@
         }
     }
 }
+/* form_bottom_rest END*/
 
+/* play_block BEGIN*/
 .play_block {
     position: absolute;
     bottom: 0;
@@ -5030,9 +5078,9 @@
         }
     }
 }
+/* play_block END*/
 
-
-
+/* restaurant_invert BEGIN*/
 .restaurant_invert {
     .top_inner_bg {
         padding-bottom: 52px;
@@ -5169,11 +5217,12 @@
         color: #3a3a3a;
     }
 
-    .rest_slider_wr {
+    .rest_slider_wr,.rest_slider_wr_congress {
         background: url(../include/res_bgi.jpg) 50% no-repeat;
     }
 
-    .rest_slider_wr .rest_slider_arrow_btn {
+    .rest_slider_wr .rest_slider_arrow_btn,
+    .rest_slider_wr_congress .rest_slider_arrow_btn {
         background: none;
 
         &:hover {
@@ -5181,7 +5230,12 @@
         }
     }
 
-    .rest_slider_wr .rest_slider_top .right_slider:before {
+    .site-header .site-header__logo svg path {
+    	fill: #fff !important;
+    }
+
+    .rest_slider_wr .rest_slider_top .right_slider:before
+    .rest_slider_wr_congress .rest_slider_top .right_slider:before {
         background: url(../include/sl_bg_ri2.jpg) 50% no-repeat;
         background-size: cover;
     }
@@ -5199,7 +5253,6 @@
         }
     }
 }
-
 
 .site-wrapper.inner_page_main.restaurant_invert {
     background: #F2F2F3;
@@ -5330,7 +5383,7 @@
         }
     }
 }
-
+/* restaurant_invert END*/
 
 @keyframes countingBar {
     0% {
@@ -5346,6 +5399,7 @@
     overflow: hidden;
 }
 
+/* fitnes_top BEGIN*/
 .fitnes_top {
 
     .left_slider {
@@ -5392,6 +5446,10 @@
     }
 }
 
+/* fitnes_top END*/
+
+
+/* animation BEGIN*/
 .chef_block_wr .block-padding .left {
 
     .title,
@@ -5455,7 +5513,7 @@
     }
 }
 
-.rest_slider_wr {
+.rest_slider_wr,.rest_slider_wr_congress {
 
 
     .rest_slider_top {
@@ -5501,7 +5559,10 @@
         opacity: 1;
     }
 }
+/* animation END*/
 
+
+/* announces_list_wrap BEGIN*/
 .announces_list_wrap {
 
     .block-padding {
@@ -5615,6 +5676,8 @@
     }
 }
 
+/* announces_list_wrap END*/
+
 .spec_page,
 .congress_page {
 
@@ -5670,19 +5733,17 @@
     }
 }
 
-
 .congress_page {
+	.site-header .site-header__logo svg path {
+		fill: #fff !important;
+	}
 
-    .events_block_wr {
+	.events_block_wr,.event_block_wr {
         background: url(../include/bg_con.jpg) 50% no-repeat;
         background-size: cover;
     }
 
-
-}
-
-.congress_page {
-    &.top_inner_bg {
+    .top_inner_bg {
         min-height: 737px;
         padding-bottom: 76px;
 
@@ -5731,7 +5792,7 @@
     }
 
 
-    .rest_slider_wr {
+    .rest_slider_wr,.rest_slider_wr_congress {
 
         .rest_slider_top {
 
@@ -5841,7 +5902,7 @@
     }
 }
 
-
+/* params_cong BEGIN*/
 .params_cong {
     padding-top: 70px;
 
@@ -5946,8 +6007,9 @@
         }
     }
 }
+/* params_cong END*/
 
-
+/* equipment_block_wr BEGIN*/
 .equipment_block_wr {
     padding-top: 70px;
     padding-bottom: 85px;
@@ -6111,8 +6173,9 @@
     }
 }
 
+/* equipment_block_wr END*/
 
-
+/* place_block_wr BEGIN*/
 .place_block_wr {
     display: flex;
     align-items: start;
@@ -6560,7 +6623,10 @@
         }
     }
 }
+/* place_block_wr END*/
 
+
+/* bottom_form_cong BEGIN*/
 .bottom_form_cong {
     padding-top: 0;
     padding-bottom: 60px;
@@ -6703,4 +6769,12 @@
             }
         }
     }
+}
+
+/* bottom_form_cong END*/
+
+.service_page {
+	.site-header .site-header__logo svg path {
+		fill: #fff !important;
+	}
 }
