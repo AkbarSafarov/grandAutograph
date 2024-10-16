@@ -9039,9 +9039,51 @@ p {
                 padding-top: 108px;
             }
 
+            .map_mobile {
+                @media all and (min-width: 768px) {
+                    display: none;
+                }
+            }
+
             .right {
                 flex: 1 1 auto;
                 font-size: 0;
+                position: relative;
+
+                @media all and (max-width: 767px) {
+                    display: none;
+                }
+
+                .metro {
+                    position: absolute;
+                    width: 85px;
+
+                    @media all and (max-width: 1300px) {
+                        width: 60px;
+                    }
+                }
+
+                .point {
+                    position: absolute;
+                    cursor: pointer;
+
+                    svg {
+                        width: 85px;
+                        height: 85px;
+
+                        @media all and (max-width: 1300px) {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+
+                    &:hover {
+
+                        path[fill="#393335"] {
+                            fill: #9c163a;
+                        }
+                    }
+                }
             }
         }
 

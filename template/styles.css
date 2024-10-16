@@ -9447,11 +9447,48 @@ p:last-child {
     max-width: 540px;
     padding-top: 108px;
 }
+@media all and (min-width: 768px) {
+    .position_block .block-padding .inner .map_mobile {
+        display: none;
+    }
+}
 .position_block .block-padding .inner .right {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
     font-size: 0;
+    position: relative;
+}
+@media all and (max-width: 767px) {
+    .position_block .block-padding .inner .right {
+        display: none;
+    }
+}
+.position_block .block-padding .inner .right .metro {
+    position: absolute;
+    width: 85px;
+}
+@media all and (max-width: 1300px) {
+    .position_block .block-padding .inner .right .metro {
+        width: 60px;
+    }
+}
+.position_block .block-padding .inner .right .point {
+    position: absolute;
+    cursor: pointer;
+}
+.position_block .block-padding .inner .right .point svg {
+    width: 85px;
+    height: 85px;
+}
+@media all and (max-width: 1300px) {
+    .position_block .block-padding .inner .right .point svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+.position_block .block-padding .inner .right .point:hover path[fill="#393335"] {
+    fill: #9c163a;
 }
 .position_block .block-padding .title {
     font-weight: 400;
