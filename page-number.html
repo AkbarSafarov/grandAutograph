@@ -7,9 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="template/lib/lightgallery/lightgallery.min.css" />
     <link rel="stylesheet" href="template/lib/swiper/swiper.min.css" />
-    <link rel="stylesheet" href="template/lib/locoscroll/locomotive-scroll.min.css">
     <link rel="stylesheet" href="template/styles.css">
-    <script src="template/lib/locoscroll/locomotive-scroll.min.js"></script>
     <script src="template/lib/gsap/gsap-latest-beta.min.js?r=5426"></script>
     <script src="template/lib/gsap/ScrollTrigger.min.js"></script>
     <script src="template/lib/lightgallery/lightgallery.js"></script>
@@ -144,7 +142,9 @@
                             <a href="" class="video_btn"></a>
                             <div class="label">
                                 <div class="icon">
-                                    <img src="include/images/3d.svg" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.0125 22.7251L2.5125 19.6573C1.281 18.8188 0.6645 18.3981 0.333 17.7829C1.78814e-07 17.1676 0 16.4436 0 15.0013V9.44518C0 8.98444 -4.65661e-08 8.5981 0.0105 8.26471L9 14.3888V24C8.4645 23.7138 7.8405 23.2889 7.0125 22.7251ZM12 23.9986C12.5355 23.7124 13.1595 23.286 13.9875 22.7222L18.4875 19.6559C19.719 18.8174 20.3355 18.3967 20.667 17.7814C21 17.1662 21 16.4436 21 14.9998V9.44375C21 8.98301 21 8.59667 20.9895 8.26328L12 14.3888V23.9986ZM19.692 5.63048L10.5 11.8948L1.308 5.63191C1.626 5.39152 2.0205 5.12252 2.5125 4.78769L7.0125 1.72134C8.697 0.573779 9.54 0 10.5 0C11.46 0 12.303 0.572348 13.9875 1.72134L18.4875 4.78769C18.981 5.12252 19.374 5.39009 19.692 5.63048Z" fill="#9C163A"/>
+                                    </svg>
                                 </div>
                                 <div class="name">3D - тур</div>
                             </div>
@@ -835,7 +835,18 @@
                                             <li><a href="#" data-img="include/images/burger_image.png">Организация мероприятий</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#" data-img="include/images/main-video-poster.png">Номера</a></li>
+                                    <li class="hasChild">
+                                        <a href="#" data-img="include/images/main-video-poster.png">
+                                            <span>Номера</span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="#" data-img="include/images/main-video-poster.png">Свадьба</a></li>
+                                            <li><a href="#" data-img="include/images/burger_image.png">Девичник</a></li>
+                                            <li><a href="#" data-img="include/images/main-video-poster.png">Корпоратив</a></li>
+                                            <li><a href="#" data-img="include/images/burger_image.png">Организация мероприятий</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#" data-img="include/images/burger_image.png">Конгресс-холл</a></li>
                                     <li><a href="#" data-img="include/images/inter_left_sl1.png">Ресторан и бар</a></li>
                                     <li><a href="#" data-img="include/images/congress_img1.png">Услуги</a></li>
