@@ -967,11 +967,14 @@ p:last-child {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.site-header__map-btn > a {
+    z-index: 2;
+}
 .site-header__map-btn:hover .site-header__map-list {
     opacity: 1;
     visibility: visible;
-    height: auto;
-    padding: 32px 10px 10px;
+    height: 128px;
+    padding: 26px 10px 10px;
 }
 .site-header__map-list {
     position: absolute;
@@ -994,8 +997,9 @@ p:last-child {
     border-radius: 0 0 250px 250px;
     background: #9c163a;
     gap: 0;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    padding: 0;
 }
 .site-header__map-list.opened {
     height: auto;
@@ -9598,7 +9602,7 @@ p:last-child {
         height: 60px;
     }
 }
-.position_block .block-padding .inner .right .point:hover path[fill="#393335"] {
+.position_block .block-padding .inner .right .point:hover path[fill="#393335"], .position_block .block-padding .inner .right .point.active path[fill="#393335"] {
     fill: #9c163a;
 }
 .position_block .block-padding .title {
@@ -10297,6 +10301,7 @@ p:last-child {
 .events_items .inner_block .swiper-slide .image {
     font-size: 0;
     position: relative;
+    overflow: hidden;
 }
 .events_items .inner_block .swiper-slide .image:before {
     content: "";
@@ -10311,8 +10316,9 @@ p:last-child {
 .events_items .inner_block .swiper-slide .image img {
     -o-object-fit: cover;
        object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width: 130%;
+    height: 130%;
+    margin-top: -10%;
 }
 .events_items .inner_block .swiper-slide .body {
     padding: 110px 60px;
@@ -14691,4 +14697,58 @@ p:last-child {
 }
 .restaurant_invert .review_slider_wrapper .swiper-button-next:before {
     background: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.16797 9C0.615684 9 0.167969 8.55228 0.167969 8C0.167969 7.44772 0.615684 7 1.16797 7V9ZM21.8751 7.29289C22.2656 7.68342 22.2656 8.31658 21.8751 8.70711L15.5111 15.0711C15.1206 15.4616 14.4874 15.4616 14.0969 15.0711C13.7064 14.6805 13.7064 14.0474 14.0969 13.6569L19.7538 8L14.0969 2.34315C13.7064 1.95262 13.7064 1.31946 14.0969 0.928932C14.4874 0.538408 15.1206 0.538408 15.5111 0.928932L21.8751 7.29289ZM1.16797 7H21.168V9H1.16797V7Z' fill='%23393335'/%3E%3C/svg%3E%0A") 50% no-repeat;
+}
+
+.fitnes_block_wr .fitnes_top .left_slider .title {
+    padding-top: 10px;
+}
+
+.history_popup__closer {
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.history_popup__closer:hover {
+    background-color: #9C163A;
+}
+
+.history_popup__closer path {
+    -webkit-transition: fill 0.3s ease-in-out;
+    transition: fill 0.3s ease-in-out;
+}
+
+.history_popup__closer:hover path {
+    fill: rgb(var(--white));
+}
+
+.history_popup__video {
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.history_popup__video:hover {
+    background-color: #9C163A;
+}
+
+.history_popup__video path {
+    -webkit-transition: fill 0.3s ease-in-out;
+    transition: fill 0.3s ease-in-out;
+}
+
+.history_popup__video:hover path {
+    fill: rgb(var(--white));
+}
+
+.afisha_page .content_main_block .block-padding .text_body + .button {
+    margin-top: 30px;
+    width: 100%;
+}
+
+@media (min-width: 1800px) {
+    .afisha_page .content_main_block .block-padding .text_body + .button {
+        margin-top: 40px;
+    }
+}
+.map-block__image img {
+    max-height: 100%;
 }

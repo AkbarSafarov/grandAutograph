@@ -782,6 +782,8 @@ p {
         @media all and (max-width: 1260px) {
             display: none;
         }
+
+
         a {
             width: 60px;
             height: 60px;
@@ -833,13 +835,17 @@ p {
             }
         }
 
+        > a {
+            z-index: 2;
+        }
+
         &:hover {
 
             .site-header__map-list {
                 opacity: 1;
                 visibility: visible;
-                height: auto;
-                padding: 32px 10px 10px;
+                height: 128px;
+                padding: 26px 10px 10px;
             }
         }
     }
@@ -857,7 +863,9 @@ p {
         border-radius: 0 0 250px 250px;
         background: #9c163a;
         gap: 0;
-        transition: all .5s ease;
+        transition: all .5s;
+        padding: 0;
+
         &.opened {
             height: auto;
             padding: 40px 10px 27px;
@@ -9184,7 +9192,7 @@ p {
                         }
                     }
 
-                    &:hover {
+                    &:hover,&.active {
 
                         path[fill="#393335"] {
                             fill: #9c163a;
@@ -9981,6 +9989,7 @@ p {
             .image {
                 font-size: 0;
                 position: relative;
+                overflow: hidden;
 
                 &:before {
                     content: '';
@@ -9995,8 +10004,9 @@ p {
 
                 img {
                     object-fit: cover;
-                    width: 100%;
-                    height: 100%;
+                    width: 130%;
+                    height: 130%;
+                    margin-top: -10%;
                 }
             }
 
@@ -15008,4 +15018,50 @@ p {
             }
         }
     }
+}
+
+.fitnes_block_wr .fitnes_top .left_slider .title {
+    padding-top: 10px;
+}
+
+
+.history_popup__closer {
+    transition: background-color .3s ease-in-out;
+}
+.history_popup__closer:hover {
+    background-color: #9C163A;
+}
+.history_popup__closer path {
+    transition: fill .3s ease-in-out;
+}
+.history_popup__closer:hover path {
+    fill: rgb(var(--white));
+}
+.history_popup__video {
+    transition: background-color .3s ease-in-out;
+}
+.history_popup__video:hover {
+    background-color: #9C163A;
+}
+.history_popup__video path {
+    transition: fill .3s ease-in-out;
+}
+.history_popup__video:hover path {
+    fill: rgb(var(--white));
+}
+
+
+.afisha_page .content_main_block .block-padding .text_body + .button {
+    margin-top: 30px;
+    width: 100%;
+}
+@media (min-width: 1800px) {
+    .afisha_page .content_main_block .block-padding .text_body + .button {
+        margin-top: 40px;
+    }
+}
+
+
+.map-block__image img {
+    max-height: 100%;
 }

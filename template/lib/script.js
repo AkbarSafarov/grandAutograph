@@ -683,6 +683,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 );
             });
 
+            let eventsItemsImages = document.querySelectorAll('.events_items img');
+
+            eventsItemsImages.forEach(image => {
+                gsap.fromTo(image,
+                    { y: '-10%' },
+                    {
+                        y: '10%',
+                        scrollTrigger: {
+                            //scroller: "[data-scroll-container]",
+                            trigger: '.events_items',
+                            start: 'top 40%',
+                            end: 'bottom top',
+                            scrub: true,
+                            stagger: 0.5,
+                            duration: 1
+                        }
+                    }
+                );
+            });
+
             gsap.fromTo(document.querySelector('.citys-pearl .small-pearl img'),
                 { y: '30%' },
                 {
@@ -844,6 +864,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             );
+
+            
 
             gsap.fromTo(document.querySelector('.restaurants-block__mobile-pearls .small'),
                 { y: '100%' },
@@ -1036,67 +1058,67 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         },
         accordion: function() {
-    const accor = document.querySelectorAll('.accor_block');
-    if (!accor) return;
+            const accor = document.querySelectorAll('.accor_block');
+            if (!accor) return;
 
-    let activeItem = null;
+            let activeItem = null;
 
-    function slideToggle(element, duration = 600) {
-        let isCollapsed = window.getComputedStyle(element).display === 'none';
+            function slideToggle(element, duration = 600) {
+                let isCollapsed = window.getComputedStyle(element).display === 'none';
 
-        if (isCollapsed) {
-            element.style.display = 'block';
-            let height = element.scrollHeight;
-            element.style.height = 0;
-            element.style.overflow = 'hidden';
-            element.style.transition = `height ${duration}ms ease`;
+                if (isCollapsed) {
+                    element.style.display = 'block';
+                    let height = element.scrollHeight;
+                    element.style.height = 0;
+                    element.style.overflow = 'hidden';
+                    element.style.transition = `height ${duration}ms ease`;
 
-            requestAnimationFrame(() => {
-                element.style.height = height + 'px';
-            });
+                    requestAnimationFrame(() => {
+                        element.style.height = height + 'px';
+                    });
 
-            setTimeout(() => {
-                element.style.height = '';
-                element.style.overflow = '';
-                element.style.transition = '';
-            }, duration);
-        } else {
-            element.style.height = element.scrollHeight + 'px';
-            element.style.overflow = 'hidden';
-            element.style.transition = `height ${duration}ms ease`;
+                    setTimeout(() => {
+                        element.style.height = '';
+                        element.style.overflow = '';
+                        element.style.transition = '';
+                    }, duration);
+                } else {
+                    element.style.height = element.scrollHeight + 'px';
+                    element.style.overflow = 'hidden';
+                    element.style.transition = `height ${duration}ms ease`;
 
-            requestAnimationFrame(() => {
-                element.style.height = 0;
-            });
+                    requestAnimationFrame(() => {
+                        element.style.height = 0;
+                    });
 
-            setTimeout(() => {
-                element.style.display = 'none';
-                element.style.height = '';
-                element.style.overflow = '';
-                element.style.transition = '';
-            }, duration);
-        }
-    }
-
-    accor.forEach((item) => {
-        const btn = item.querySelector('.accor_name');
-        const body = item.querySelector('.accor_body');
-
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            if (activeItem && activeItem !== item) {
-                activeItem.classList.remove('opened');
-                slideToggle(activeItem.querySelector('.accor_body'));
+                    setTimeout(() => {
+                        element.style.display = 'none';
+                        element.style.height = '';
+                        element.style.overflow = '';
+                        element.style.transition = '';
+                    }, duration);
+                }
             }
 
-            item.classList.toggle('opened');
-            slideToggle(body);
+            accor.forEach((item) => {
+                const btn = item.querySelector('.accor_name');
+                const body = item.querySelector('.accor_body');
 
-            activeItem = item.classList.contains('opened') ? item : null;
-        });
-    });
-},
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    if (activeItem && activeItem !== item) {
+                        activeItem.classList.remove('opened');
+                        slideToggle(activeItem.querySelector('.accor_body'));
+                    }
+
+                    item.classList.toggle('opened');
+                    slideToggle(body);
+
+                    activeItem = item.classList.contains('opened') ? item : null;
+                });
+            });
+        },
 
         animationBlock: function(){
             const blocks = document.querySelectorAll('.animation_block');
@@ -1315,24 +1337,35 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         },
         pressModal: function(){
+            const pressPopupOpened = document.querySelector('.press_popup.opened');
+            if (pressPopupOpened)
+                lenis.stop();
+            
             const pressBtn = document.querySelectorAll('.announces-block__slider-item');
 
-            if(!pressBtn) return;
+            if (!pressBtn) return;
 
             pressBtn.forEach((item) => {
                 const btn = item.querySelector('.item-btn a');
-                
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.target.classList.toggle('active')
-                    document.querySelector('.press_popup').classList.toggle('opened')
-                    document.documentElement.classList.add('overflow-hidden')
-                    lenis.stop();
-                });
+
+                if (btn.getAttribute('href') === '#'
+                    || btn.getAttribute('href') === ':;'
+                    || btn.getAttribute('href').includes('void(0)')
+                    || btn.getAttribute('href').includes('javascript:')) {
+
+                    btn.addEventListener('click', (e) => {
+                        e.target.classList.toggle('active')
+                        document.querySelector('.press_popup').classList.toggle('opened')
+                        document.documentElement.classList.add('overflow-hidden')
+                        lenis.stop();
+                    });
+
+                }
             })
 
             document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('press_popup') || e.target.classList.contains('press_popup__closer')) {
+                if (e.target.classList.contains('press_popup')
+                    || e.target.classList.contains('press_popup__closer')) {
                     document.querySelector('.press_popup').classList.remove('opened');
                     document.documentElement.classList.remove('overflow-hidden')
                     lenis.start();
@@ -1899,7 +1932,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },   
             });
         },
-        placetSlider: function() {
+        placetSlider: function () {
             const restaurantWrapper = document.querySelector('.place_block_wr');
             const congressWrapper = document.querySelector('.rest_slider_wr');
 
@@ -1914,6 +1947,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             const congressSliderText = new Swiper('.left_slider_rest_slider', {
+                hashNavigation: {
+                    watchState: true,
+                },
                 slidesPerView: 1,
                 loop: true,
                 effect: 'fade',
@@ -1923,9 +1959,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextEl: '.rest_slider_arrow_btn.swiper-button-next',
                     prevEl: '.rest_slider_arrow_btn.swiper-button-prev',
                 },
-                thumbs: {
-                    swiper: congressSliderImage,
-                },
+                // thumbs: {
+                //     swiper: congressSliderImage,
+                // },
                 pagination: {
                     el: ".left_slider_bottom .pagination_rest_slider",
                     type: "fraction",
@@ -2020,6 +2056,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-
     }
+
+
 }())
