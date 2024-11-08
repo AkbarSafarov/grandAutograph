@@ -1068,34 +1068,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (isCollapsed) {
                     element.style.display = 'block';
-                    let height = element.scrollHeight;
-                    element.style.height = 0;
-                    element.style.overflow = 'hidden';
-                    element.style.transition = `height ${duration}ms ease`;
+                    // let height = element.scrollHeight;
+                    // element.style.height = 0;
+                    // element.style.overflow = 'hidden';
+                    // element.style.transition = `height ${duration}ms ease`;
 
                     requestAnimationFrame(() => {
-                        element.style.height = height + 'px';
+                        //element.style.height = height + 'px';
                     });
 
                     setTimeout(() => {
-                        element.style.height = '';
-                        element.style.overflow = '';
-                        element.style.transition = '';
+                        // element.style.height = '';
+                        // element.style.overflow = '';
+                        // element.style.transition = '';
                     }, duration);
                 } else {
-                    element.style.height = element.scrollHeight + 'px';
-                    element.style.overflow = 'hidden';
-                    element.style.transition = `height ${duration}ms ease`;
+                    // element.style.height = element.scrollHeight + 'px';
+                    // element.style.overflow = 'hidden';
+                    // element.style.transition = `height ${duration}ms ease`;
 
                     requestAnimationFrame(() => {
-                        element.style.height = 0;
+                        //element.style.height = 0;
                     });
 
+                    element.style.display = 'none';
+
                     setTimeout(() => {
-                        element.style.display = 'none';
-                        element.style.height = '';
-                        element.style.overflow = '';
-                        element.style.transition = '';
+                        //element.style.display = 'none';
+                        // element.style.height = '';
+                        // element.style.overflow = '';
+                        // element.style.transition = '';
                     }, duration);
                 }
             }
@@ -2053,6 +2055,45 @@ document.addEventListener('DOMContentLoaded', function () {
                     congressSliderImage.slideTo(sliderText.realIndex);
                     congressSliderText.slideTo(sliderText.realIndex);
                     isSyncing = false;
+                }
+            });
+        },
+        selectStyler: function (){
+            const selectTag = document.querySelectorAll('.select');
+
+            if(!selectTag) return;
+            
+            selectTag.forEach(select => {
+                const selectHead = select.querySelector('.select__head');
+                const selectList = select.querySelector('.select__list');
+
+                selectHead.addEventListener('click', () => {
+                    if (selectHead.classList.contains('open')) {
+                        selectHead.classList.remove('open');
+                        selectList.style.display = 'none';
+                    } else {
+                        document.querySelectorAll('.select__head').forEach(head => head.classList.remove('open'));
+                        document.querySelectorAll('.select__list').forEach(list => list.style.display = 'none');
+
+                        selectHead.classList.add('open');
+                        selectList.style.display = 'block';
+                    }
+                });
+
+                selectList.querySelectorAll('.select__item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        selectHead.classList.remove('open');
+                        selectList.style.display = 'none';
+                        selectHead.textContent = item.textContent;
+                        select.querySelector('input').value = item.textContent;
+                    });
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.select')) {
+                    document.querySelectorAll('.select__head').forEach(head => head.classList.remove('open'));
+                    document.querySelectorAll('.select__list').forEach(list => list.style.display = 'none');
                 }
             });
         }
