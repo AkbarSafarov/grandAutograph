@@ -727,6 +727,10 @@ p:last-child {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     max-width: 213px;
+    display: inline-block;
+}
+.site-header__logo img, .site-header__logo svg {
+    max-width: 100%;
 }
 @media all and (max-width: 1500px) {
     .site-header__logo img, .site-header__logo svg {
@@ -1104,6 +1108,14 @@ p:last-child {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.site-header.header_active {
+    background: rgb(var(--accent-color));
+}
+@media all and (max-width: 1024px) {
+    .site-header.header_active .site-header__inner {
+        padding: 10px 0 !important;
+    }
+}
 .site-header.header_active .site-header__logo a svg path {
     fill: #fff !important;
 }
@@ -1168,7 +1180,7 @@ p:last-child {
         padding-top: 150px !important;
     }
     .burger-block .burger-block__inner.iphone-padding-chrome {
-        padding-top: 150px !important;
+        padding-top: 200px !important;
     }
 }
 .burger-block.opened {
@@ -1518,8 +1530,10 @@ p:last-child {
         font-weight: normal;
     }
 }
-.burger-block__map_btn {
-    display: none;
+@media all and (min-width: 768px) {
+    .burger-block__map_btn {
+        display: none !important;
+    }
 }
 @media all and (max-width: 767px) {
     .burger-block__map_btn {
@@ -12346,6 +12360,10 @@ p:last-child {
             flex: 0 0 1.313rem;
     font-size: 0;
 }
+.gal_res_block .block-padding .item .label .icon svg path {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
 .gal_res_block .block-padding .item .label .name {
     font-weight: 400;
     font-size: 16px;
@@ -12353,6 +12371,14 @@ p:last-child {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.gal_res_block .block-padding .item .label:hover .icon svg path {
+    fill: #393335;
+}
+.gal_res_block .block-padding .item .label:hover .name {
+    color: #393335;
 }
 .gal_res_block .block-padding .item:first-child {
     -webkit-box-flex: 0;

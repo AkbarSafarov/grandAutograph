@@ -1058,69 +1058,68 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         },
         accordion: function() {
-            const accor = document.querySelectorAll('.accor_block');
-            if (!accor) return;
+    const accor = document.querySelectorAll('.accor_block');
+    if (!accor) return;
 
-            let activeItem = null;
+    let activeItem = null;
 
-            function slideToggle(element, duration = 600) {
-                let isCollapsed = window.getComputedStyle(element).display === 'none';
+    function slideToggle(element, duration = 600) {
+        let isCollapsed = window.getComputedStyle(element).display === 'none';
 
-                if (isCollapsed) {
-                    element.style.display = 'block';
-                    // let height = element.scrollHeight;
-                    // element.style.height = 0;
-                    // element.style.overflow = 'hidden';
-                    // element.style.transition = `height ${duration}ms ease`;
+        if (isCollapsed) {
+            element.style.display = 'block';
+            let height = element.scrollHeight;
+            element.style.height = '0px';
+            element.style.overflow = 'hidden';
+            element.style.transition = `height ${duration}ms ease`;
 
-                    requestAnimationFrame(() => {
-                        //element.style.height = height + 'px';
-                    });
+            requestAnimationFrame(() => {
+                element.style.height = height + 'px';
+            });
 
-                    setTimeout(() => {
-                        // element.style.height = '';
-                        // element.style.overflow = '';
-                        // element.style.transition = '';
-                    }, duration);
-                } else {
-                    // element.style.height = element.scrollHeight + 'px';
-                    // element.style.overflow = 'hidden';
-                    // element.style.transition = `height ${duration}ms ease`;
+            setTimeout(() => {
+                element.style.height = '';
+                element.style.overflow = '';
+                element.style.transition = '';
+            }, duration);
+        } else {
+            element.style.height = element.scrollHeight + 'px';
+            element.style.overflow = 'hidden';
+            element.style.transition = `height ${duration}ms ease`;
 
-                    requestAnimationFrame(() => {
-                        //element.style.height = 0;
-                    });
+            requestAnimationFrame(() => {
+                element.style.height = '0px';
+            });
 
-                    element.style.display = 'none';
+            setTimeout(() => {
+                element.style.display = 'none';
+                element.style.height = '';
+                element.style.overflow = '';
+                element.style.transition = '';
+            }, duration);
+        }
+    }
 
-                    setTimeout(() => {
-                        //element.style.display = 'none';
-                        // element.style.height = '';
-                        // element.style.overflow = '';
-                        // element.style.transition = '';
-                    }, duration);
-                }
+    accor.forEach((item) => {
+        const btn = item.querySelector('.accor_name');
+        const body = item.querySelector('.accor_body');
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            if (activeItem && activeItem !== item) {
+                activeItem.classList.remove('opened');
+                slideToggle(activeItem.querySelector('.accor_body'));
             }
 
-            accor.forEach((item) => {
-                const btn = item.querySelector('.accor_name');
-                const body = item.querySelector('.accor_body');
+            item.classList.toggle('opened');
+            slideToggle(body);
 
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
+            activeItem = item.classList.contains('opened') ? item : null;
+        });
+    });
+},
 
-                    if (activeItem && activeItem !== item) {
-                        activeItem.classList.remove('opened');
-                        slideToggle(activeItem.querySelector('.accor_body'));
-                    }
-
-                    item.classList.toggle('opened');
-                    slideToggle(body);
-
-                    activeItem = item.classList.contains('opened') ? item : null;
-                });
-            });
-        },
 
         animationBlock: function(){
             const blocks = document.querySelectorAll('.animation_block');
@@ -2062,7 +2061,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const selectTag = document.querySelectorAll('.select');
 
             if(!selectTag) return;
-            
+
             selectTag.forEach(select => {
                 const selectHead = select.querySelector('.select__head');
                 const selectList = select.querySelector('.select__list');

@@ -634,8 +634,10 @@ p {
         a {
             transition: all .3s;
             max-width: 213px;
+            display: inline-block;
         }
         img,svg {
+            max-width: 100%;
 
             @media all and (max-width: 1500px) {
                 max-width: 168px;
@@ -957,6 +959,13 @@ p {
     }
 
     &.header_active {
+        background: rgb(var(--accent-color));   
+
+        @media all and (max-width: 1024px) {
+            .site-header__inner {
+                padding: 10px 0 !important;
+            }
+        }
 
         .site-header__logo {
             a svg path {
@@ -1029,7 +1038,7 @@ p {
                 padding-top: 150px !important;
             }
             &.iphone-padding-chrome {
-                padding-top: 150px !important;
+                padding-top: 200px !important;
             }
         }
     }
@@ -1353,7 +1362,9 @@ p {
         }
     }
     &__map_btn {
-        display: none;
+        @media all and (min-width: 768px) {
+            display: none !important;
+        }
         @media all and (max-width: 767px){
             margin-bottom: 20px;
             display: flex;
@@ -12310,6 +12321,10 @@ p {
                 .icon {
                     flex: 0 0 1.313rem;
                     font-size: 0;
+
+                    svg path {
+                        transition: all .3s;
+                    }
                 }
 
                 .name {
@@ -12317,6 +12332,18 @@ p {
                     font-size: 16px;
                     color: #9c163a;
                     flex: 1 1 auto;
+                    transition: all .3s;
+                }
+
+                &:hover {
+
+                    .icon svg path {
+                        fill: #393335;
+                    }
+
+                    .name {
+                        color: #393335;
+                    }
                 }
             }
 
