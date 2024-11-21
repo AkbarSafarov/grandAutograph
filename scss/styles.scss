@@ -1041,6 +1041,18 @@ p {
                 padding-top: 200px !important;
             }
         }
+
+        &.fixed {
+            .burger-block__inner {
+                padding-top: 120px;
+                &.iphone-padding {
+                    padding-top: 150px !important;
+                }
+                &.iphone-padding-chrome {
+                    padding-top: 100px !important;
+                }
+            }
+        }
     }
     &.opened {
         //transform: translateY(0);
@@ -12473,8 +12485,12 @@ p {
                 }
 
                 .button {
-                    opacity: .5;
+                    opacity: .5 !important;
                     background: #C34E50;
+
+                    &:hover {
+                        opacity: 1 !important;
+                    }
                 }
             }
 
@@ -12662,7 +12678,53 @@ p {
 }
 /* chef_block_wr END*/
 
+
+
+
 /* gal_res_block BEGIN*/
+
+.label_btn_3d {
+    padding: 0.5rem 1.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.688rem;
+    border-radius: 6.25rem;
+    background: #fff;
+    position: absolute;
+    top: 1.875rem;
+    right: 1.875rem;
+    z-index: 2;
+    cursor: pointer;
+
+    .icon {
+        flex: 0 0 1.313rem;
+        font-size: 0;
+
+        svg path {
+            transition: all .3s;
+        }
+    }
+
+    .name {
+        font-weight: 400;
+        font-size: 16px;
+        color: #9c163a;
+        flex: 1 1 auto;
+        transition: all .3s;
+    }
+
+    &:hover {
+
+        .icon svg path {
+            fill: #393335;
+        }
+
+        .name {
+            color: #393335;
+        }
+    }
+}
+
 .gal_res_block {
     position: relative;
     z-index: 2;
@@ -13013,6 +13075,10 @@ p {
                         opacity: .5;
                         display: inline-block;
                         vertical-align: top;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
                     }
                 }
             }
@@ -13997,8 +14063,18 @@ p {
         background: #3a3a3a;
     }
 
-    .gal_res_block .block-padding .item .label .name {
+    .gal_res_block .block-padding .item .label_btn_3d .name {
         color: #3a3a3a;
+    }
+
+    .gal_res_block .block-padding .item .label_btn_3d:hover {
+
+        svg path {
+            fill: #f2b770;
+        }
+        .name {
+            color: #f2b770;
+        }
     }
 
     .rest_slider_wr,.rest_slider_wr_congress {

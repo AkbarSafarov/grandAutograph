@@ -1182,6 +1182,15 @@ p:last-child {
     .burger-block .burger-block__inner.iphone-padding-chrome {
         padding-top: 200px !important;
     }
+    .burger-block.fixed .burger-block__inner {
+        padding-top: 120px;
+    }
+    .burger-block.fixed .burger-block__inner.iphone-padding {
+        padding-top: 150px !important;
+    }
+    .burger-block.fixed .burger-block__inner.iphone-padding-chrome {
+        padding-top: 100px !important;
+    }
 }
 .burger-block.opened {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
@@ -12506,8 +12515,11 @@ p:last-child {
     padding-bottom: 50px;
 }
 .chef_block_wr .block-padding .left .chef_text .button {
-    opacity: 0.5;
+    opacity: 0.5 !important;
     background: #C34E50;
+}
+.chef_block_wr .block-padding .left .chef_text .button:hover {
+    opacity: 1 !important;
 }
 .chef_block_wr .block-padding .left .image {
     position: relative;
@@ -12662,6 +12674,50 @@ p:last-child {
 
 /* chef_block_wr END*/
 /* gal_res_block BEGIN*/
+.label_btn_3d {
+    padding: 0.5rem 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.688rem;
+    border-radius: 6.25rem;
+    background: #fff;
+    position: absolute;
+    top: 1.875rem;
+    right: 1.875rem;
+    z-index: 2;
+    cursor: pointer;
+}
+.label_btn_3d .icon {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 1.313rem;
+            flex: 0 0 1.313rem;
+    font-size: 0;
+}
+.label_btn_3d .icon svg path {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.label_btn_3d .name {
+    font-weight: 400;
+    font-size: 16px;
+    color: #9c163a;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.label_btn_3d:hover .icon svg path {
+    fill: #393335;
+}
+.label_btn_3d:hover .name {
+    color: #393335;
+}
+
 .gal_res_block {
     position: relative;
     z-index: 2;
@@ -13002,6 +13058,9 @@ p:last-child {
     opacity: 0.5;
     display: inline-block;
     vertical-align: top;
+}
+.menu_food_block .inner .item ul li a:hover {
+    text-decoration: none;
 }
 .menu_food_block .inner .item img {
     position: absolute;
@@ -13871,8 +13930,14 @@ p:last-child {
 .restaurant_invert .chef_block_wr .block-padding .left .chef_text .button {
     background: #3a3a3a;
 }
-.restaurant_invert .gal_res_block .block-padding .item .label .name {
+.restaurant_invert .gal_res_block .block-padding .item .label_btn_3d .name {
     color: #3a3a3a;
+}
+.restaurant_invert .gal_res_block .block-padding .item .label_btn_3d:hover svg path {
+    fill: #f2b770;
+}
+.restaurant_invert .gal_res_block .block-padding .item .label_btn_3d:hover .name {
+    color: #f2b770;
 }
 .restaurant_invert .rest_slider_wr, .restaurant_invert .rest_slider_wr_congress {
     background: url(../include/res_bgi.jpg) 50% no-repeat;
